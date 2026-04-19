@@ -1,0 +1,20 @@
+{"id": "seed-000000", "instruction": "Give three tips for staying healthy."}
+{"id": "seed-000001", "instruction": "What are the three primary colors?"}
+{"id": "seed-000002", "instruction": "Describe the structure of an atom."}
+{"id": "seed-000003", "instruction": "How can we reduce air pollution?"}
+{"id": "seed-000004", "instruction": "Describe a time when you had to make a difficult decision."}
+{"id": "seed-000005", "instruction": "Identify the odd one out.\n\nInput: Twitter, Instagram, Telegram"}
+{"id": "seed-000006", "instruction": "Explain why the following fraction is equivalent to 1/4\n\nInput: 4/16"}
+{"id": "seed-000007", "instruction": "Write a short story in third person narration about a protagonist who has to make an important career decision."}
+{"id": "seed-000008", "instruction": "Render a 3D model of a house"}
+{"id": "seed-000009", "instruction": "Evaluate this sentence for spelling and grammar mistakes\n\nInput: He finnished his meal and left the resturant"}
+{"id": "seed-000010", "instruction": "How did Julius Caesar die?"}
+{"id": "seed-000011", "instruction": "What is the capital of France?"}
+{"id": "seed-000012", "instruction": "Generate a list of ten items a person might need for a camping trip"}
+{"id": "seed-000013", "instruction": "Discuss the causes of the Great Depression"}
+{"id": "seed-000014", "instruction": "Classify the following into animals, plants, and minerals\n\nInput: Oak tree, copper ore, elephant"}
+{"id": "seed-000015", "instruction": "Explain the use of word embeddings in Natural Language Processing"}
+{"id": "seed-000016", "instruction": "Describe the function of a computer motherboard"}
+{"id": "seed-000017", "instruction": "Reverse engineer this code to create a new version\n\nInput: def factorialize(num):\n  factorial = 1\n  for i in range(1, num):\n    factorial *= i\n  \n  return factorial"}
+{"id": "seed-000018", "instruction": "Propose an ethical solution to the problem of data privacy"}
+{"id": "seed-000019", "instruction": "Generate three verbs that mean the same as \"to apologize\""}

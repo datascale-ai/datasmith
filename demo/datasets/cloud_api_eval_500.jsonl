@@ -1,0 +1,500 @@
+{"id": "seed-000000", "instruction": "Give three tips for staying healthy."}
+{"id": "seed-000001", "instruction": "What are the three primary colors?"}
+{"id": "seed-000002", "instruction": "Describe the structure of an atom."}
+{"id": "seed-000003", "instruction": "How can we reduce air pollution?"}
+{"id": "seed-000004", "instruction": "Describe a time when you had to make a difficult decision."}
+{"id": "seed-000005", "instruction": "Identify the odd one out.\n\nInput: Twitter, Instagram, Telegram"}
+{"id": "seed-000006", "instruction": "Explain why the following fraction is equivalent to 1/4\n\nInput: 4/16"}
+{"id": "seed-000007", "instruction": "Write a short story in third person narration about a protagonist who has to make an important career decision."}
+{"id": "seed-000008", "instruction": "Render a 3D model of a house"}
+{"id": "seed-000009", "instruction": "Evaluate this sentence for spelling and grammar mistakes\n\nInput: He finnished his meal and left the resturant"}
+{"id": "seed-000010", "instruction": "How did Julius Caesar die?"}
+{"id": "seed-000011", "instruction": "What is the capital of France?"}
+{"id": "seed-000012", "instruction": "Generate a list of ten items a person might need for a camping trip"}
+{"id": "seed-000013", "instruction": "Discuss the causes of the Great Depression"}
+{"id": "seed-000014", "instruction": "Classify the following into animals, plants, and minerals\n\nInput: Oak tree, copper ore, elephant"}
+{"id": "seed-000015", "instruction": "Explain the use of word embeddings in Natural Language Processing"}
+{"id": "seed-000016", "instruction": "Describe the function of a computer motherboard"}
+{"id": "seed-000017", "instruction": "Reverse engineer this code to create a new version\n\nInput: def factorialize(num):\n  factorial = 1\n  for i in range(1, num):\n    factorial *= i\n  \n  return factorial"}
+{"id": "seed-000018", "instruction": "Propose an ethical solution to the problem of data privacy"}
+{"id": "seed-000019", "instruction": "Generate three verbs that mean the same as \"to apologize\""}
+{"id": "seed-000020", "instruction": "What does DNA stand for?"}
+{"id": "seed-000021", "instruction": "Compare and contrast the Cuban Missile Crisis and the Vietnam War."}
+{"id": "seed-000022", "instruction": "Generate a list of random words."}
+{"id": "seed-000023", "instruction": "Transcribe the recording into text.\n\nInput: Recording about the history of Waterloo"}
+{"id": "seed-000024", "instruction": "Who is the world's most famous painter?"}
+{"id": "seed-000025", "instruction": "Explain the concept of cogging torque."}
+{"id": "seed-000026", "instruction": "Look up the boiling point of water."}
+{"id": "seed-000027", "instruction": "Describe the life and reign of King Charles II."}
+{"id": "seed-000028", "instruction": "Find the area of a circle given its radius.\n\nInput: Radius = 4"}
+{"id": "seed-000029", "instruction": "Identify the lines of longitude that divides North and South America."}
+{"id": "seed-000030", "instruction": "Explain the process of cellular respiration in plants."}
+{"id": "seed-000031", "instruction": "Rewrite the following sentence using active voice.\n\nInput: The news report was read by the captain."}
+{"id": "seed-000032", "instruction": "Generate a list of adjectives that describe a person as brave."}
+{"id": "seed-000033", "instruction": "Outline the consequences of deforestation."}
+{"id": "seed-000034", "instruction": "Develop a plan to reduce electricity usage in a home."}
+{"id": "seed-000035", "instruction": "Arrange the words in the given sentence to form a grammatically correct sentence.\n\nInput: quickly the brown fox jumped"}
+{"id": "seed-000036", "instruction": "Analyze the given text for its tone.\n\nInput: The world has been greatly impacted by the COVID-19 pandemic and it has drastically changed our lives."}
+{"id": "seed-000037", "instruction": "Use the given data to calculate the median.\n\nInput: [2, 3, 7, 8, 10]"}
+{"id": "seed-000038", "instruction": "Rewrite the given paragraph in a shorter, easier to understand form.\n\nInput: Although it is generally accepted that the internet has allowed us to connect with people all over the world, there are still those people who are not familiar with its basic functions, who don’t understand why it has become so commonplace, or what its true capabilities are."}
+{"id": "seed-000039", "instruction": "Design a logo for a website about recycling."}
+{"id": "seed-000040", "instruction": "Generate a poem that expresses joy."}
+{"id": "seed-000041", "instruction": "Convert the given equation into an algebraic expression.\n\nInput: 3x+5y=9"}
+{"id": "seed-000042", "instruction": "Brainstorm possible solutions to reduce water pollution."}
+{"id": "seed-000043", "instruction": "Explain why the given definition is wrong.\n\nInput: A mole is an animal that lives underground."}
+{"id": "seed-000044", "instruction": "Variable x is defined as “4x + 2y = 10”. Find the value of x."}
+{"id": "seed-000045", "instruction": "Write a short paragraph about the given topic.\n\nInput: The importance of using renewable energy"}
+{"id": "seed-000046", "instruction": "Explain the concept of artificial intelligence in simple terms."}
+{"id": "seed-000047", "instruction": "Design an app for a delivery company."}
+{"id": "seed-000048", "instruction": "Summarize the given passage.\n\nInput: A recent study showed that global climate change is one of the most important challenges facing the world today. The consequences of global warming include rising sea levels, extreme weather events and biodiversity loss. Climate change is caused by human activities such as burning fossil fuels, and if unchecked will have long-term and devastating impacts on the planet."}
+{"id": "seed-000049", "instruction": "Extract the facts from the paragraph.\n\nInput: Online education continues to become more popular for schools and students alike. Its advantages are generally lower costs, less commitment and the ability to study at a time, place and pace that suits the student."}
+{"id": "seed-000050", "instruction": "Edit the following sentence to make it more concise.\n\nInput: He ran to the bus stop in order to catch the bus that was due to arrive in five minutes."}
+{"id": "seed-000051", "instruction": "Generate a poem with 10 lines."}
+{"id": "seed-000052", "instruction": "Convert from celsius to fahrenheit.\n\nInput: Temperature in Celsius: 15"}
+{"id": "seed-000053", "instruction": "Arrange the given numbers in ascending order.\n\nInput: 2, 4, 0, 8, 3"}
+{"id": "seed-000054", "instruction": "Calculate the total surface area of a cube with a side length of 5 cm."}
+{"id": "seed-000055", "instruction": "What is the force on a 1 kg mass due to the gravitational force?"}
+{"id": "seed-000056", "instruction": "Provide one example for a cultural practice."}
+{"id": "seed-000057", "instruction": "Given a set of numbers, find the maximum value.\n\nInput: Set: {10, 3, 25, 6, 16}"}
+{"id": "seed-000058", "instruction": "Give two examples of a liquid."}
+{"id": "seed-000059", "instruction": "What is the product of 6 and 2?"}
+{"id": "seed-000060", "instruction": "What type of plant is a skunk cabbage?"}
+{"id": "seed-000061", "instruction": "Convert the given binary number to its decimal equivalent.\n\nInput: 101101"}
+{"id": "seed-000062", "instruction": "Name two types of desert biomes."}
+{"id": "seed-000063", "instruction": "Given a sentence, convert it into passive voice.\n\nInput: The dog barked at the alley cat."}
+{"id": "seed-000064", "instruction": "Transform the following sentence into the passive voice\n\nInput: I bought a book"}
+{"id": "seed-000065", "instruction": "Create a dialog between two people who are discussing a scientific phenomenon\n\nInput: Hydropower"}
+{"id": "seed-000066", "instruction": "Identify the most suitable adverb for the following sentence\n\nInput: She works"}
+{"id": "seed-000067", "instruction": "Find the main idea of the following passage\n\nInput: Climate change is an increasingly contentious global issue. It is already having a drastic effect on the environment and human lives. We are already seeing an increase in extreme weather events and rising sea levels, both of which have a major impact on the planet."}
+{"id": "seed-000068", "instruction": "Analyze the tone of the following sentences\n\nInput: I am so upset with you right now"}
+{"id": "seed-000069", "instruction": "Construct an argument to defend the following statement\n\nInput: Alternative energy sources are critical to solving the climate crisis"}
+{"id": "seed-000070", "instruction": "Convert the following sentence into the present continuous tense\n\nInput: He reads books"}
+{"id": "seed-000071", "instruction": "Give an example of a metaphor that uses the following object\n\nInput: Stars"}
+{"id": "seed-000072", "instruction": "Describe the following person\n\nInput: John"}
+{"id": "seed-000073", "instruction": "Construct a mathematical problem with the following numbers\n\nInput: 21, 4"}
+{"id": "seed-000074", "instruction": "Aim to reduce the following sentence without changing its meaning\n\nInput: When he came in, he woke everyone up"}
+{"id": "seed-000075", "instruction": "Identify the conjunctions in the following sentence\n\nInput: She wrote a letter and sealed it"}
+{"id": "seed-000076", "instruction": "Rewrite the following sentence in the third person\n\nInput: I am anxious"}
+{"id": "seed-000077", "instruction": "Generate a list of business ideas for a food delivery service."}
+{"id": "seed-000078", "instruction": "Edit the following sentence to improve clarity and flow.\n\nInput: The restaurant has great food though the prices are a bit hefty"}
+{"id": "seed-000079", "instruction": "Imagine you are speaking with a customer who is unsatisfied with the product they bought from you. Construct a response that diffuses the situation."}
+{"id": "seed-000080", "instruction": "Explain the concept of a bubble sort algorithm to a non-technical audience."}
+{"id": "seed-000081", "instruction": "Classify the following incident as a breach of protocol. Output 1 for breach, and 0 for no breach.\n\nInput: Using a school laptop for personal use"}
+{"id": "seed-000082", "instruction": "Given the following input, construct a creative story.\n\nInput: A magic bow and arrow"}
+{"id": "seed-000083", "instruction": "Generate a list of methods to reduce food waste."}
+{"id": "seed-000084", "instruction": "Propose an idea for a self-driving car."}
+{"id": "seed-000085", "instruction": "Explain the concept of a linear regression model using simple language."}
+{"id": "seed-000086", "instruction": "Construct a list of tips to help reduce stress."}
+{"id": "seed-000087", "instruction": "Write a review of a recent movie you watched.\n\nInput: Parasite (2019)"}
+{"id": "seed-000088", "instruction": "Create a Twitter post to promote your new product.\n\nInput: Alisha's All Natural Jam"}
+{"id": "seed-000089", "instruction": "Given the following input, classify the verb as transitive or intransitive.\n\nInput: improve"}
+{"id": "seed-000090", "instruction": "Generate a list of marketing strategies to promote a new mobile app."}
+{"id": "seed-000091", "instruction": "Rewrite the sentence to provide more clarity and flow.\n\nInput: Making the decision to rent a house was a wise choice"}
+{"id": "seed-000092", "instruction": "Give a description of the following customer segment.\n\nInput: Online shoppers in the US aged between 18-25"}
+{"id": "seed-000093", "instruction": "Design a logo for a mobile application."}
+{"id": "seed-000094", "instruction": "Generate a list of country names in the western hemisphere."}
+{"id": "seed-000095", "instruction": "Translate the following phrase into French.\n\nInput: I miss you"}
+{"id": "seed-000096", "instruction": "Explain what an API is."}
+{"id": "seed-000097", "instruction": "Compute the area of a rectangle with length 10cm and width 5cm."}
+{"id": "seed-000098", "instruction": "Find the capital of Spain."}
+{"id": "seed-000099", "instruction": "Classify the following statement as true or false.\n\nInput: The Supreme Court is the highest court in the US."}
+{"id": "seed-000100", "instruction": "Design a database to record employee salaries."}
+{"id": "seed-000101", "instruction": "Identify the theme of the following book.\n\nInput: The book is about a small town in the Midwest and how people respond to a series of tragedies and unexpected events that shake their lives."}
+{"id": "seed-000102", "instruction": "Assign each word in the sentence below to its part of speech.\n\nInput: Kittens often scamper around excitedly."}
+{"id": "seed-000103", "instruction": "Generate a password of 8 characters."}
+{"id": "seed-000104", "instruction": "Create a web page about robotics."}
+{"id": "seed-000105", "instruction": "What is the most commonly shared type of content on social media?"}
+{"id": "seed-000106", "instruction": "What is the main idea of this text?\n\nInput: The robotics industry has become one of the fastest growing sectors in today’s economy. Robotics technology is being applied in various industries and applications, such as manufacturing, healthcare, and defense."}
+{"id": "seed-000107", "instruction": "Generate a list of present continuous verbs."}
+{"id": "seed-000108", "instruction": "Think of a phrase or idiom containing the word \"sleep\"."}
+{"id": "seed-000109", "instruction": "Make a prediction about what will happen in the next paragraph.\n\nInput: Mary had been living in the small town for many years and had never seen anything like what was coming."}
+{"id": "seed-000110", "instruction": "Generate a headline for the following article.\n\nInput: This article discusses the future of renewable energy sources in the US."}
+{"id": "seed-000111", "instruction": "What type of punctuation should be used at the end of the following sentence?\n\nInput: Let's look at the bird"}
+{"id": "seed-000112", "instruction": "Identify the incorrect word and suggest a better version.\n\nInput: The waitress served a humonguous burger."}
+{"id": "seed-000113", "instruction": "Rewrite this sentence using the third person point of view.\n\nInput: I went to the store."}
+{"id": "seed-000114", "instruction": "Change this sentence into the future tense.\n\nInput: She walks to school."}
+{"id": "seed-000115", "instruction": "Summarize the following article in your own words.\n\nInput: The internet has become a critical part of modern life and it has revolutionized the way we communicate and conduct business. It has enabled the spread of ideas and experiences quickly, globally, and cheaply."}
+{"id": "seed-000116", "instruction": "What is the meaning of the following idiom?\n\nInput: It’s raining cats and dogs"}
+{"id": "seed-000117", "instruction": "Generate a sentence using the following words in the correct order.\n\nInput: house on fire"}
+{"id": "seed-000118", "instruction": "Is the sentence grammatically correct?\n\nInput: The boy was playing with her toys."}
+{"id": "seed-000119", "instruction": "Classify the relationship between John and Mary.\n\nInput: John and Mary are siblings."}
+{"id": "seed-000120", "instruction": "Identify the language used in the given sentence.\n\nInput: Il est incroyable."}
+{"id": "seed-000121", "instruction": "Generate a summary of the given article.\n\nInput: Between 1989 and 2019, the size of the U.S. economy, measured in terms of the gross domestic product (GDP), more than doubled. The growth was faster than in the prior two decades, driven in part by the dramatic expansion of the information technology sector in the 1990s and early 2000s, gains in worker productivity and strong consumer demand, and government investments in research and development."}
+{"id": "seed-000122", "instruction": "Conver the temperature from Fahrenheit to Celsius.\n\nInput: 94F"}
+{"id": "seed-000123", "instruction": "Construct a phrase using the given words\n\nInput: Pandemic, challenge, action"}
+{"id": "seed-000124", "instruction": "Find the synonyms of the following word: 'Tenacious'."}
+{"id": "seed-000125", "instruction": "Suggest a good restaurant.\n\nInput: Los Angeles, CA"}
+{"id": "seed-000126", "instruction": "Calculate the area of the triangle.\n\nInput: Base: 5cm; Height: 6cm"}
+{"id": "seed-000127", "instruction": "Rewrite the sentence with more descriptive words.\n\nInput: The game is fun."}
+{"id": "seed-000128", "instruction": "Generate a creative birthday wish for a friend."}
+{"id": "seed-000129", "instruction": "Make the second sentence shorter.\n\nInput: Winter is usually the coldest season of the year. Snow is a common element during winter."}
+{"id": "seed-000130", "instruction": "Find the solution to the quadratic equation.\n\nInput: 3x² + 7x - 4 = 0"}
+{"id": "seed-000131", "instruction": "Find the average of these three numbers.\n\nInput: 2, 5, 10"}
+{"id": "seed-000132", "instruction": "Rewrite the sentence in a different tense.\n\nInput: He asked her to join him for lunch."}
+{"id": "seed-000133", "instruction": "Classify the following data with three labels.\n\nInput: fjsklfjdsklfjsklfjsklfjs"}
+{"id": "seed-000134", "instruction": "Compose a five word sentence describing your day."}
+{"id": "seed-000135", "instruction": "Describe the following painting in one sentence.\n\nInput: Attached Painting"}
+{"id": "seed-000136", "instruction": "Search the web and find the title of the longest novel."}
+{"id": "seed-000137", "instruction": "Change the following sentence from the singular form to the plural form.\n\nInput: The cat is drinking."}
+{"id": "seed-000138", "instruction": "Compile a list of 5 US states located in the Mid West."}
+{"id": "seed-000139", "instruction": "Analyze the following sentence and find the direct object.\n\nInput: She wrote a book."}
+{"id": "seed-000140", "instruction": "During the last member meeting, create a list of 5 ideas to improve the club."}
+{"id": "seed-000141", "instruction": "Edit the following sentence to correct the grammar and syntax errors\n\nInput: You was late to the party"}
+{"id": "seed-000142", "instruction": "Create a questions that can be answered using the following sentence.\n\nInput: \"It was a beautiful day\""}
+{"id": "seed-000143", "instruction": "Write a simple definition of the word \"economics\"."}
+{"id": "seed-000144", "instruction": "Find the cutoff score for successful completion of the exam\n\nInput: The exam had 100 multiple-choice questions with 4 options each"}
+{"id": "seed-000145", "instruction": "Generate a topic sentence to introduce the following text.\n\nInput: Amidst increasing violence in the region, many civilians are fleeing their homes in search of safety."}
+{"id": "seed-000146", "instruction": "Write a function to calculate the factorial of a given number."}
+{"id": "seed-000147", "instruction": "Write a function to convert a given string to uppercase."}
+{"id": "seed-000148", "instruction": "Extract the positive integers from an array?\n\nInput: arr = [5,-2,8,-7,3,-1,0,5]"}
+{"id": "seed-000149", "instruction": "Calculate the square root of a given number."}
+{"id": "seed-000150", "instruction": "Reverse a linked list."}
+{"id": "seed-000151", "instruction": "Compute the longest increasing subsequence of a given array?\n\nInput: arr = [7, 10, 8, 11, 9, 5]"}
+{"id": "seed-000152", "instruction": "Design an algorithm to find the maximum profit of a stock buy and sell?"}
+{"id": "seed-000153", "instruction": "Given two strings, check whether one string is a rotation of another?\n\nInput: s1 = ‘waterbottle’\ns2 = ‘erbottlewat’"}
+{"id": "seed-000154", "instruction": "Given an array of integers, return the first repeating element.\n\nInput: arr = [3, 6, 7, 1, 4, 6, 7]"}
+{"id": "seed-000155", "instruction": "Find the two non-repeating elements in an array of repeating elements?\n\nInput: arr = [2, 3, 7, 9, 11, 2, 3, 11]"}
+{"id": "seed-000156", "instruction": "Given a binary tree, check if it is a binary search tree?"}
+{"id": "seed-000157", "instruction": "Find the maximum profit that can be earned from a given sequence of transactions?\n\nInput: arr = [100, 180, 260, 310, 40, 535, 695]"}
+{"id": "seed-000158", "instruction": "Calculate the amount of money in a bank account with an initial $100 deposit and an interest rate of 6%, compounded annually"}
+{"id": "seed-000159", "instruction": "Give me a detailed overview of the framework of a web service."}
+{"id": "seed-000160", "instruction": "Create a timeline describing the history of the internet"}
+{"id": "seed-000161", "instruction": "Paraphrase the following sentence\n\nInput: The scientists conducted a rigorous experiment"}
+{"id": "seed-000162", "instruction": "Develop a web-based application that does the following\n\nInput: Sorts images according to category"}
+{"id": "seed-000163", "instruction": "Describe the pros and cons of the following policy\n\nInput: Providing free college education"}
+{"id": "seed-000164", "instruction": "Design a post for a social media account to promote the following product\n\nInput: Fresh fruit smoothie"}
+{"id": "seed-000165", "instruction": "Summarize the following article\n\nInput: https://www.nytimes.com/2010/07/05/business/global/05phone.html"}
+{"id": "seed-000166", "instruction": "Create a job description for the following role\n\nInput: Data Analytics Consultant"}
+{"id": "seed-000167", "instruction": "Identify the correct order for the following commands\n\nInput: pack, prepare, travel"}
+{"id": "seed-000168", "instruction": "Create a survey question to measure customer satisfaction"}
+{"id": "seed-000169", "instruction": "Create a list of 10 different animals"}
+{"id": "seed-000170", "instruction": "Suggest a good idea for a family photoshoot."}
+{"id": "seed-000171", "instruction": "Create a response for a customer's email about a refund issue.\n\nInput: Dear [Company],\n\nI recently purchased a product from your store and I'm disappointed with the quality. I would like to request a refund."}
+{"id": "seed-000172", "instruction": "Summarize the given news article in one sentence.\n\nInput: In the latest budget announcement, the Chancellor has promised to introduce a new employment allowance to help employees of small businesses."}
+{"id": "seed-000173", "instruction": "Provide five adjectives that describe a particular animal.\n\nInput: Lion"}
+{"id": "seed-000174", "instruction": "Rearrange the words to create a complete sentence.\n\nInput: Underwater creatures are fascinating"}
+{"id": "seed-000175", "instruction": "Write a story that begins with the following sentence.\n\nInput: She opened the door to find a tall figure cloaked in shadows."}
+{"id": "seed-000176", "instruction": "Convert the given sentence into active voice.\n\nInput: One hundred and fifty books were sold."}
+{"id": "seed-000177", "instruction": "Explain why a given topic is important.\n\nInput: Environmental protection"}
+{"id": "seed-000178", "instruction": "Describe the sound of the given object.\n\nInput: Wind chime"}
+{"id": "seed-000179", "instruction": "Rewrite the given sentence using a different but similar word.\n\nInput: She partook in the event."}
+{"id": "seed-000180", "instruction": "Classify the given input as either a poem, story, or song.\n\nInput: Once upon a midnight dreary, while I pondered, weak and weary."}
+{"id": "seed-000181", "instruction": "Create a title for the following description.\n\nInput: A story about a journey of self-discovery by a young girl."}
+{"id": "seed-000182", "instruction": "Rewrite the given sentence in a more formal tone.\n\nInput: I had to go to the store real quick."}
+{"id": "seed-000183", "instruction": "Write a few sentences about a given historical figure.\n\nInput: Amelia Earhart"}
+{"id": "seed-000184", "instruction": "Generate a list of questions related to a given topic.\n\nInput: Innovation"}
+{"id": "seed-000185", "instruction": "Create a slogan for a given product.\n\nInput: Healthy snack"}
+{"id": "seed-000186", "instruction": "Categorize the following text into one of the two sentiment classes: positive or negative.\n\nInput: I didn't like the product very much because it was too slow and not user friendly."}
+{"id": "seed-000187", "instruction": "Summarize the paragraph into a sentence.\n\nInput: When buying furniture, it's important to take into account the overall look and feel of the space. That means that you should ask yourself if the pieces you are selecting are a good match for the existing furnishings as well as what you imagine the overall style to be."}
+{"id": "seed-000188", "instruction": "Make the following sentence more concise.\n\nInput: I have a really bad cold and it is making me feeling really miserable."}
+{"id": "seed-000189", "instruction": "Transform the following sentence into a yes/no question.\n\nInput: It is going to rain tomorrow."}
+{"id": "seed-000190", "instruction": "Compose a tweet that addresses the issue of environmental degradation."}
+{"id": "seed-000191", "instruction": "Replace the underlined words with appropriate synonyms.\n\nInput: The robbers snitched on their partners."}
+{"id": "seed-000192", "instruction": "Correct the grammatical errors in the sentence.\n\nInput: She come to the store for supplies."}
+{"id": "seed-000193", "instruction": "Identify the type of the relationship between the two words in the sentence.\n\nInput: The car passed the truck."}
+{"id": "seed-000194", "instruction": "Compose an informative sentence explaining the given term.\n\nInput: Green bonds"}
+{"id": "seed-000195", "instruction": "Rewrite the following sentence without changing the meaning.\n\nInput: The sales report was not accurate."}
+{"id": "seed-000196", "instruction": "What's the output of this code?\n\nInput: x = [1, 2, 3, 4]\ny = [i**2 for i in x]"}
+{"id": "seed-000197", "instruction": "Write a short review for the novel \"The Catcher in the Rye\"."}
+{"id": "seed-000198", "instruction": "Identify the following animal.\n\nInput: It has thick fur, a long tail, and pointed ears."}
+{"id": "seed-000199", "instruction": "Describe the impact of the coronavirus on the economy."}
+{"id": "seed-000200", "instruction": "What geometric shape has 5 sides and 5 angles?"}
+{"id": "seed-000201", "instruction": "Generate a pitch for a new and original product."}
+{"id": "seed-000202", "instruction": "Compose a sonnet about the beauty of nature."}
+{"id": "seed-000203", "instruction": "Rewrite the following sentence so that it is in active voice.\n\nInput: The problem is being solved by her."}
+{"id": "seed-000204", "instruction": "Write a short story about a day in the life of a software engineer."}
+{"id": "seed-000205", "instruction": "What's the difference between a virus and a worm?"}
+{"id": "seed-000206", "instruction": "Explain the concept of the blockchain."}
+{"id": "seed-000207", "instruction": "What is the contraction of \"they are\"?"}
+{"id": "seed-000208", "instruction": "Create a list of items for a picnic."}
+{"id": "seed-000209", "instruction": "Find the lowest common multiple of two numbers.\n\nInput: 36 and 87"}
+{"id": "seed-000210", "instruction": "Classify the given article as either positive or negative sentiment.\n\nInput: The new car is a disappointment. The breaks are terrible and cost way too much for the features offered."}
+{"id": "seed-000211", "instruction": "Convert the following hexadecimal number to octal.\n\nInput: DB"}
+{"id": "seed-000212", "instruction": "Gather some recent data related to the increasing rates of unemployment."}
+{"id": "seed-000213", "instruction": "Indicate how the following characters in the novel reflect the theme of \"the corrupting influence of power\".\n\nInput: Gregoire in Zola's Germinal"}
+{"id": "seed-000214", "instruction": "Rewrite the following sentence to avoid any logical fallacies.\n\nInput: This medicine will cure all your health issues; you should trust me because I am a doctor."}
+{"id": "seed-000215", "instruction": "Name two different ways to reduce poverty in a community."}
+{"id": "seed-000216", "instruction": "Generate a sentence that follows the structure of: \"All ____ is based on/with _____\""}
+{"id": "seed-000217", "instruction": "Describe the principle of the Law of Supply."}
+{"id": "seed-000218", "instruction": "Find the area of the given trapezoid.\n\nInput: Bases: 13 cm and 16 cm; Height: 12 cm"}
+{"id": "seed-000219", "instruction": "Describe the themes present in the given poem.\n\nInput: Poem:\n\nWe step out into the night\nWhere the stars cry like only loneliness can\nAnd make love in the darkness"}
+{"id": "seed-000220", "instruction": "Generate a haiku poem."}
+{"id": "seed-000221", "instruction": "Design a logo for a web development company."}
+{"id": "seed-000222", "instruction": "Compare cats and dogs."}
+{"id": "seed-000223", "instruction": "Classify this text as Fiction or Non-fiction.\n\nInput: The universe is estimated to be around 13.8 billion years old."}
+{"id": "seed-000224", "instruction": "Name three fruits that are rich in Vitamin C."}
+{"id": "seed-000225", "instruction": "Translate this sentence from French to English.\n\nInput: J'aime faire de la randonnée."}
+{"id": "seed-000226", "instruction": "Generate the third term in the sequence 2, 5, 9, 14."}
+{"id": "seed-000227", "instruction": "What is the purpose of Financial Accounting?"}
+{"id": "seed-000228", "instruction": "Describe a unique way to cook a steak."}
+{"id": "seed-000229", "instruction": "Summarize the advantages of renewable energy."}
+{"id": "seed-000230", "instruction": "Identify the incorrect word in this sentence.\n\nInput: The singer joyfully belted their solo."}
+{"id": "seed-000231", "instruction": "Suggest a powerful quote."}
+{"id": "seed-000232", "instruction": "Sort the following list in alphabetical order.\n\nInput: Camouflage, Furniture, Plaster"}
+{"id": "seed-000233", "instruction": "What is a trade deficit?"}
+{"id": "seed-000234", "instruction": "Name one benefit of meditation."}
+{"id": "seed-000235", "instruction": "Name the three main mountain ranges in the United States."}
+{"id": "seed-000236", "instruction": "Assign this task to the design team.\n\nInput: Design a communication tool for internal team members."}
+{"id": "seed-000237", "instruction": "Provide the lyrics for the song titled “Yesterday”"}
+{"id": "seed-000238", "instruction": "Provide a brief summary of the novel \"Never Let Me Go\"."}
+{"id": "seed-000239", "instruction": "Edit the following sentence so that it has correct grammar.\n\nInput: I were just going to the store"}
+{"id": "seed-000240", "instruction": "Name something you can do with paper."}
+{"id": "seed-000241", "instruction": "Construct a sentence using the phrase \"every day\"."}
+{"id": "seed-000242", "instruction": "What type of fruit would be a good addition to a fruit salad?"}
+{"id": "seed-000243", "instruction": "Describe in a few words what makes a good leader."}
+{"id": "seed-000244", "instruction": "Find a rhyming word for the word \"river\"."}
+{"id": "seed-000245", "instruction": "What is the scientific name for a beaver?"}
+{"id": "seed-000246", "instruction": "Convert the following number from base 10 to hexadecimal: 278"}
+{"id": "seed-000247", "instruction": "Give a definition of \"algae\"."}
+{"id": "seed-000248", "instruction": "Name a natural process which occurs in food preservation."}
+{"id": "seed-000249", "instruction": "Supply a phrase to complete this proverb: \"It's better to be safe than ____.\""}
+{"id": "seed-000250", "instruction": "Give an example of a convergent boundary."}
+{"id": "seed-000251", "instruction": "Follow the law of supply and demand, describe what would happen to the price of a good if the demand increased."}
+{"id": "seed-000252", "instruction": "Provide an example of an endangered species of animal."}
+{"id": "seed-000253", "instruction": "Research about a famous scientist and provide a short biography about him/her."}
+{"id": "seed-000254", "instruction": "Explain why the election of Abraham Lincoln was considered a revolutionary moment."}
+{"id": "seed-000255", "instruction": "Research Einstein's theory of relativity and provide a brief explanation."}
+{"id": "seed-000256", "instruction": "Analyze the historical significance of the Stonewall Uprising."}
+{"id": "seed-000257", "instruction": "Create a sentence that employs a figure of speech."}
+{"id": "seed-000258", "instruction": "Generate a sentence in Spanish that describes the natural beauty of Barcelona."}
+{"id": "seed-000259", "instruction": "Describe the painting \"The Great Wave off Kanagawa\" by Katsushika Hokusai."}
+{"id": "seed-000260", "instruction": "Explain the concept of entropy in thermodynamics."}
+{"id": "seed-000261", "instruction": "Provide an example of a non-renewable source of energy."}
+{"id": "seed-000262", "instruction": "Describe the major differences between the Catholic and Protestant faiths."}
+{"id": "seed-000263", "instruction": "What is the process of photosynthesis and why is it important?"}
+{"id": "seed-000264", "instruction": "Write a 250 word essay about Coral Reef Conservation"}
+{"id": "seed-000265", "instruction": "Compose a haiku about cats"}
+{"id": "seed-000266", "instruction": "Given a sequence of numbers, calculate the average\n\nInput: 1, 2, 3, 4, 5"}
+{"id": "seed-000267", "instruction": "What are the important contributions of NASA to space exploration?"}
+{"id": "seed-000268", "instruction": "Rewrite this sentence, \"She is taking a short break from practice\"\n\nInput: She is taking a short break from practice"}
+{"id": "seed-000269", "instruction": "Given a movie title \"The Iron Giant\", come up with an suitable tagline\n\nInput: The Iron Giant"}
+{"id": "seed-000270", "instruction": "Given the following data, What is the median score\n\nInput: 7, 9, 13, 2, 8"}
+{"id": "seed-000271", "instruction": "Describe the qualities of a good leader"}
+{"id": "seed-000272", "instruction": "Explain the difference between a personal computer and a server"}
+{"id": "seed-000273", "instruction": "What is the main purpose of blockchain technology?"}
+{"id": "seed-000274", "instruction": "Come up with a creative metaphor for smile"}
+{"id": "seed-000275", "instruction": "Given a list of ingredients, come up with a dish\n\nInput: Salt, Pepper, Onion, Garlic"}
+{"id": "seed-000276", "instruction": "For the following passage, identify the theme or thesis statement.\n\nInput: Corruption affects countries on many levels and erodes their competitive edge in a global economy. Poor compliance to regulations, ethical standards, and laws impairs public trust and results in conflict. Transnational financial crime drains a nation’s resources, weakens government tools to deliver long-term social goals, and destabilizes markets."}
+{"id": "seed-000277", "instruction": "What critically acclaimed 2016 movie has a setting of a post-apocalyptic wasteland?"}
+{"id": "seed-000278", "instruction": "Given the following sentence, add appropriate punctuation to make it grammatically correct.\n\nInput: The judge said guilty"}
+{"id": "seed-000279", "instruction": "Label the following news article as either \"Political\" or \"Entertainment\"\n\nInput: Ansel Elgort and Gabrielle Union have both been cast in a new romantic summer movie to be released in 2022."}
+{"id": "seed-000280", "instruction": "Reword the following sentence to the past tense.\n\nInput: She is writing a novel inspired by her grandfather."}
+{"id": "seed-000281", "instruction": "Summarize the following passage in less than 50 words.\n\nInput: The issue of immigration has become critical as the number of people wanting to enter the United States for a better life has been on the rise. Immigration has been a consistent source of controversy and debate, with wide variations in opinion regarding the benefits and drawbacks of immigration. Migration from one part of the world to another is not uncommon, yet the current state of the immigration debate in the United States has escalated and has become divisive."}
+{"id": "seed-000282", "instruction": "How many bytes are there in a kilobyte?"}
+{"id": "seed-000283", "instruction": "Generate a creative description of a sunset in the beach."}
+{"id": "seed-000284", "instruction": "Standardize the following date to the ISO 8601 format.\n\nInput: July 26th, 2021"}
+{"id": "seed-000285", "instruction": "Rewrite the following sentence in a more concise way.\n\nInput: Although he had been studying for several hours he had not finished the task."}
+{"id": "seed-000286", "instruction": "Classify the following fruit according to its color.\n\nInput: Orange"}
+{"id": "seed-000287", "instruction": "Compute the following expression.\n\nInput: 2^3 + 3^2"}
+{"id": "seed-000288", "instruction": "Suggest a suitable card game for a birthday party with 10 year old kids."}
+{"id": "seed-000289", "instruction": "Translate the following sentence from English to French.\n\nInput: I am happy to meet you."}
+{"id": "seed-000290", "instruction": "Analyze the given poem and explain the theme.\n\nInput: Roses are red, \nViolets are blue, \nSugar is sweet \nAnd so are you."}
+{"id": "seed-000291", "instruction": "Calculate the average age of the following five people.\n\nInput: John, 32 \nAnne, 25 \nHugh, 27\nPeter, 40 \nRebecca, 28"}
+{"id": "seed-000292", "instruction": "Explain the following quote.\n\nInput: \"Education is the key to success.\""}
+{"id": "seed-000293", "instruction": "Determine the longest word in the following sentence.\n\nInput: It is a wonderful sunny day."}
+{"id": "seed-000294", "instruction": "Rewrite the following equation in expanded form.\n\nInput: (x + 3)(2x - 5)"}
+{"id": "seed-000295", "instruction": "Explain the meaning of the following phrase.\n\nInput: \"out of the box\""}
+{"id": "seed-000296", "instruction": "Write a review for the following movie.\n\nInput: The Godfather"}
+{"id": "seed-000297", "instruction": "Identify the main character in the following story.\n\nInput: Once upon a time, there lived a poor peasant boy who worked very hard on his farm."}
+{"id": "seed-000298", "instruction": "Describe the solution in detail.\n\nInput: We established a system for automatically generating data for our machine learning model."}
+{"id": "seed-000299", "instruction": "Name three diseases that can be caused by poor hygiene."}
+{"id": "seed-000300", "instruction": "Generate a random password of 6 characters in length using only capital letters and numbers."}
+{"id": "seed-000301", "instruction": "Explain what is meant by the circle of fifths."}
+{"id": "seed-000302", "instruction": "Generate a story with the given keywords.\n\nInput: princess, dragon, knight"}
+{"id": "seed-000303", "instruction": "Calculate the winning percentage for the team in the given statistics.\n\nInput: Wins: 50\nLosses: 70"}
+{"id": "seed-000304", "instruction": "Translate the given phrase from French to English.\n\nInput: Je suis fatigué"}
+{"id": "seed-000305", "instruction": "Create a haiku poetry with the given theme.\n\nInput: The beauty of night sky"}
+{"id": "seed-000306", "instruction": "Design a logo for the given company.\n\nInput: Example Company"}
+{"id": "seed-000307", "instruction": "Find the synonyms for the words below.\n\nInput: Determined"}
+{"id": "seed-000308", "instruction": "Draft a letter of appreciation for the given recipient.\n\nInput: Mr. John Smith"}
+{"id": "seed-000309", "instruction": "Analyze the given film and explain why it should be included in the top 10 list.\n\nInput: The film Parasite"}
+{"id": "seed-000310", "instruction": "Explain the implications of artificial intelligence in health care."}
+{"id": "seed-000311", "instruction": "Write a definition of \"photoshop\"."}
+{"id": "seed-000312", "instruction": "List five factors that lead to global warming."}
+{"id": "seed-000313", "instruction": "Name 5 invasive species."}
+{"id": "seed-000314", "instruction": "What is an AI algorithm?"}
+{"id": "seed-000315", "instruction": "Explain the term \"AI explainability\"."}
+{"id": "seed-000316", "instruction": "Pick out the adverbs in the following sentence.\n\nInput: John quickly ran to the store."}
+{"id": "seed-000317", "instruction": "Generate a poem about spring."}
+{"id": "seed-000318", "instruction": "Write a scientific explanation for why the sky is blue."}
+{"id": "seed-000319", "instruction": "List five characteristics of good communication."}
+{"id": "seed-000320", "instruction": "Suggest five strategies for self-motivation."}
+{"id": "seed-000321", "instruction": "Name five characteristics of a typical resume."}
+{"id": "seed-000322", "instruction": "Describe the benefits of using a GPT model."}
+{"id": "seed-000323", "instruction": "Compare two types of text processing techniques and explain differences between them.\n\nInput: Rule-Based Text Processing and Deep Learning Based Text Processing"}
+{"id": "seed-000324", "instruction": "Summarize the article below in 5 sentences.\n\nInput: The COVID-19 crisis has brought many changes to our everyday lives, including the way we work and interact. Working from home has become the norm for many people, but it has also brought its own unique challenges. It can be difficult to stay productive and motivated while working remotely, especially if you’re feeling burned out or isolated. So how do you make the most of it? Here are some tips to help you stay productive while working from home."}
+{"id": "seed-000325", "instruction": "Given a set of eight numbers (1,2, 3, 4, 5, 6, 7, 8), generate a sentence that reflects their order."}
+{"id": "seed-000326", "instruction": "Explain why decision trees may be better than linear models for certain problems."}
+{"id": "seed-000327", "instruction": "Suggest a sentence that follows \"He had never seen a creature so strange,\""}
+{"id": "seed-000328", "instruction": "Select the best prediction from the sentences below given the input \"My vacation is in ________.\"\n\nInput: My vacation is in _______."}
+{"id": "seed-000329", "instruction": "Describe the effects of climate change."}
+{"id": "seed-000330", "instruction": "Classify the given sentence as either negative or positive.\n\nInput: I want to quit my job."}
+{"id": "seed-000331", "instruction": "Rewrite the cover letter below in the first person.\n\nInput: Maxwell Smart has extensive experience in the restaurant industry. He brings to the table exceptional customer service and problem-solving skills. During his time in the restaurant industry, Maxwell was a top performer and was recognized for his ability to motivate others."}
+{"id": "seed-000332", "instruction": "Explain why computational models can be used in analysing text."}
+{"id": "seed-000333", "instruction": "Generate a question that could follow the response below.\n\nInput: I saw a movie last week."}
+{"id": "seed-000334", "instruction": "Summarize the article below in a maximum of 100 words.\n\nInput: A head teacher at a high school in Birmingham has been suspended following reports of irregularities in marking examinations. Inspectors said that some grades had been inflated and process failings had contributed to the issues. The head teacher was said to have failed to ensure the security of the marking process, as well as failing to protect the school from “potential reputational damage”."}
+{"id": "seed-000335", "instruction": "Create a sentence that ends with an ellipsis."}
+{"id": "seed-000336", "instruction": "Explain the difference between HTML and CSS."}
+{"id": "seed-000337", "instruction": "Generate a tweet about a new product\n\nInput: Product name: Apple iWatch"}
+{"id": "seed-000338", "instruction": "Create a new recipe for flavorful noodles"}
+{"id": "seed-000339", "instruction": "Train a logistic regression model with credit data."}
+{"id": "seed-000340", "instruction": "Name four diseases caused by cold temperatures."}
+{"id": "seed-000341", "instruction": "Translate the following sentence into Spanish.\n\nInput: The blue sky is so beautiful."}
+{"id": "seed-000342", "instruction": "Generate a function for calculating the mean of a list."}
+{"id": "seed-000343", "instruction": "Write a blog post about how AI is transforming the healthcare industry."}
+{"id": "seed-000344", "instruction": "Explain the role of a computer scientist in the modern world."}
+{"id": "seed-000345", "instruction": "Describe the importance of renewable energy"}
+{"id": "seed-000346", "instruction": "Generate a review for a recent movie\n\nInput: Movie name: The Martian"}
+{"id": "seed-000347", "instruction": "Generate a function to sort a list of strings alphabetically"}
+{"id": "seed-000348", "instruction": "Write a Satire article about the coronavirus pandemic"}
+{"id": "seed-000349", "instruction": "Create a function to check whether two strings are anagrams."}
+{"id": "seed-000350", "instruction": "Explain what is a neural network"}
+{"id": "seed-000351", "instruction": "Tag the language of the following text\n\nInput: Kareena always had a passion for art. She wanted to pursue a career in the creative field and start her own gallery one day."}
+{"id": "seed-000352", "instruction": "Explain what the article is about in 1 to 2 sentences.\n\nInput: Summary: This paper describes a novel deep learning technique called Generative Autowavelets (GAW) and examines its uses in natural language processing (NLP) tasks. GAW is a combination of an autoencoder and wavelet transformer, meaning it can both compress features in text and enable structured extraction of these features."}
+{"id": "seed-000353", "instruction": "Find the three least common values in the given list.\n\nInput: [5, 10, 15, 8, 9, 5, 8, 10, 9]"}
+{"id": "seed-000354", "instruction": "Write a few sentences about the current state of the given topic.\n\nInput: Automation"}
+{"id": "seed-000355", "instruction": "Identify the two main characters in the given passage.\n\nInput: John and Lisa were walking through the park on a sunny day. They stopped to admire the flowers in the garden and talked about their plans for the future."}
+{"id": "seed-000356", "instruction": "Suggest topics for an informal discussion about the given country.\n\nInput: China"}
+{"id": "seed-000357", "instruction": "Explain the implications of the given information.\n\nInput: A recent study suggests that teenagers are spending too much time on social media."}
+{"id": "seed-000358", "instruction": "Convert the following text into a list.\n\nInput: The four elements of design are line, color, shape, and texture."}
+{"id": "seed-000359", "instruction": "Generate a sentence that contains the given words.\n\nInput: magic, castle, king"}
+{"id": "seed-000360", "instruction": "Compile a list of five items that would help someone go camping."}
+{"id": "seed-000361", "instruction": "Correct any spelling or grammar mistakes in the given sentence.\n\nInput: She jogged excersies around the lake."}
+{"id": "seed-000362", "instruction": "Find the differences between the two short texts.\n\nInput: Text A: She was wearing a beautiful red dress.\nText B: She had on a gorgeous red dress."}
+{"id": "seed-000363", "instruction": "Rewrite the following paragraph to make it sound more formal.\n\nInput: Moving away from home to college was really hard. It's like I had to let go of my comfort and safety and figure things out on my own."}
+{"id": "seed-000364", "instruction": "Classify the following sentence as either a metaphor or hyperbole.\n\nInput: The room was so hot it felt like a sauna."}
+{"id": "seed-000365", "instruction": "Generate a creative name for a restaurant serving Mexican cuisine."}
+{"id": "seed-000366", "instruction": "Suggest two marketing strategies for launching a new app."}
+{"id": "seed-000367", "instruction": "Edit the following sentence for grammar and style.\n\nInput: The professor answers the questions of the student accurately."}
+{"id": "seed-000368", "instruction": "Rewrite the following sentence for clarity.\n\nInput: What makes this program different from the others?"}
+{"id": "seed-000369", "instruction": "Change this sentence to make it a question.\n\nInput: I think she likes sports."}
+{"id": "seed-000370", "instruction": "Explain the concept of a GPT language model."}
+{"id": "seed-000371", "instruction": "Generate a slogan for a clothing brand."}
+{"id": "seed-000372", "instruction": "Add the article \"the\" to the following sentence.\n\nInput: Person who is talking"}
+{"id": "seed-000373", "instruction": "Generate an example that illustrates the concept of \"artificial intelligence\"."}
+{"id": "seed-000374", "instruction": "Describe the process of account creation for a website."}
+{"id": "seed-000375", "instruction": "Analyze the following poem and explain its meaning.\n\nInput: 'My love is like a red, red rose'"}
+{"id": "seed-000376", "instruction": "Suggest two ways to increase the reach of a blog."}
+{"id": "seed-000377", "instruction": "Name three natural elements."}
+{"id": "seed-000378", "instruction": "Give a brief description of the coronavirus."}
+{"id": "seed-000379", "instruction": "Predict the monthly electricity bill of a 1000 square-foot apartment in California."}
+{"id": "seed-000380", "instruction": "Generate 10 rhyming words for the word \"love\"."}
+{"id": "seed-000381", "instruction": "Explain the concept of binary search."}
+{"id": "seed-000382", "instruction": "Name all the elements in the periodic table with symbol C."}
+{"id": "seed-000383", "instruction": "Compare the differences between a wooden and plastic baseball bat."}
+{"id": "seed-000384", "instruction": "Calculate the area of a right triangle with base length of 5 cm and height of 3 cm."}
+{"id": "seed-000385", "instruction": "Identify the continents with the most carnivores."}
+{"id": "seed-000386", "instruction": "Explain the difference between a primary and secondary source."}
+{"id": "seed-000387", "instruction": "Explain the purpose of hypertext markup language (HTML)."}
+{"id": "seed-000388", "instruction": "Describe the differences between a substantive and procedural law."}
+{"id": "seed-000389", "instruction": "Suggest three methods for recycling paper."}
+{"id": "seed-000390", "instruction": "Describe the color pink."}
+{"id": "seed-000391", "instruction": "Generate a rate for a driver for a ride sharing app for $5."}
+{"id": "seed-000392", "instruction": "Come up with a social media campaign slogan."}
+{"id": "seed-000393", "instruction": "Compose a haiku with the provided subject.\n\nInput: Spring"}
+{"id": "seed-000394", "instruction": "Choose an appropriate introduction for the following news article.\n\nInput: The latest report from the Environmental Protection Agency reveals that the emissions of greenhouse gasses in the state have risen by 5% from last year."}
+{"id": "seed-000395", "instruction": "Write a tweet about customer service."}
+{"id": "seed-000396", "instruction": "Generate a sound effect for a car passing by."}
+{"id": "seed-000397", "instruction": "Identify the type of the following musical chord.\n\nInput: D minor"}
+{"id": "seed-000398", "instruction": "Name a planet from our solar system."}
+{"id": "seed-000399", "instruction": "Compute the sum of the following numbers.\n\nInput: 5, 10, 20"}
+{"id": "seed-000400", "instruction": "Come up with a creative tagline for a beauty product."}
+{"id": "seed-000401", "instruction": "Describe how quantum computers work."}
+{"id": "seed-000402", "instruction": "Generate a memorable quote from Albert Einstein."}
+{"id": "seed-000403", "instruction": "Find the sum of the numbers 6 and 12.\n\nInput: 6 + 12"}
+{"id": "seed-000404", "instruction": "Transform the following sentence using the past perfect tense: Yesterday they opened the door."}
+{"id": "seed-000405", "instruction": "Explain the uses of artificial intelligence."}
+{"id": "seed-000406", "instruction": "Describe a scenario in which blockchain technology could be successfully applied."}
+{"id": "seed-000407", "instruction": "Complete the following analogy: Loud is to quiet as day is to"}
+{"id": "seed-000408", "instruction": "Create an example of alliteration."}
+{"id": "seed-000409", "instruction": "Classify the following words by their grammatical categories: walk, interesting, quickly"}
+{"id": "seed-000410", "instruction": "Find the greatest common factor of 12 and 18.\n\nInput: 12 & 18"}
+{"id": "seed-000411", "instruction": "Come up with a riddle"}
+{"id": "seed-000412", "instruction": "Identify the conjugation of the verb: I will have helped"}
+{"id": "seed-000413", "instruction": "What is the first rule of storytelling?"}
+{"id": "seed-000414", "instruction": "Rewrite the sentence into more descriptive form:\nThe food was delicious."}
+{"id": "seed-000415", "instruction": "Name 5 emotional states"}
+{"id": "seed-000416", "instruction": "Create a funny one-liner."}
+{"id": "seed-000417", "instruction": "Generate a list of fashion trends for Spring 2021."}
+{"id": "seed-000418", "instruction": "What is the impact of deforestation on wildlife?"}
+{"id": "seed-000419", "instruction": "Explain economics with an example."}
+{"id": "seed-000420", "instruction": "Provide me a list of diseases that can be caused by smoking."}
+{"id": "seed-000421", "instruction": "What is the difference between machine learning and deep learning?"}
+{"id": "seed-000422", "instruction": "Describe a typical workday for a barista."}
+{"id": "seed-000423", "instruction": "How does the human brain remember information?"}
+{"id": "seed-000424", "instruction": "How does the internet of things (IoT) work?"}
+{"id": "seed-000425", "instruction": "Give me an example of a conflict resolution technique."}
+{"id": "seed-000426", "instruction": "Pick out the correct noun from the following list.\n\nInput: river, mountain, book"}
+{"id": "seed-000427", "instruction": "Identify a programming language suitable for game development."}
+{"id": "seed-000428", "instruction": "Make a list of different types of cryptocurrencies."}
+{"id": "seed-000429", "instruction": "Create a tweet with the following hashtag.\n\nInput: #SharingIsCaring"}
+{"id": "seed-000430", "instruction": "Rewrite the following sentence using the root words.\n\nInput: I am not feeling well."}
+{"id": "seed-000431", "instruction": "Combine the two sentences into a single sentence.\n\nInput: He didn't go to the party. He stayed at home."}
+{"id": "seed-000432", "instruction": "Split the following sentence into two separate sentences.\n\nInput: He said hello and waved goodbye."}
+{"id": "seed-000433", "instruction": "Classify the following sentence as positive, negative, or neutral.\n\nInput: I'm going to the store tomorrow."}
+{"id": "seed-000434", "instruction": "Discover which word in the sentence carries the most weight.\n\nInput: She ordered Chinese food for dinner."}
+{"id": "seed-000435", "instruction": "Rewrite the following sentence omitting the pronouns.\n\nInput: She told us she was busy."}
+{"id": "seed-000436", "instruction": "Write a review of the restaurant.\n\nInput: The restaurant is called La Taqueria."}
+{"id": "seed-000437", "instruction": "Outline an itinerary for a three day trip.\n\nInput: Location: London, England"}
+{"id": "seed-000438", "instruction": "Classify the item as either animal or vegetable.\n\nInput: Banana"}
+{"id": "seed-000439", "instruction": "Derive the mathematical equation for a straight line."}
+{"id": "seed-000440", "instruction": "Describe the physical features of a tiger."}
+{"id": "seed-000441", "instruction": "Summarize the argument in the text.\n\nInput: In the book \"Crime and Punishment\" by Fyodor Dostoevsky, the main character, Raskolnikov, commits a murder in hope of revealing a higher purpose."}
+{"id": "seed-000442", "instruction": "Generate ideas for a fiction story."}
+{"id": "seed-000443", "instruction": "Describe the Renaissance period."}
+{"id": "seed-000444", "instruction": "List 5 items of personal protective equipment."}
+{"id": "seed-000445", "instruction": "Replace the single quote (') to double quote (\") in the given sentence.\n\nInput: In the U.S., KIPP is a 'public-private partnership'."}
+{"id": "seed-000446", "instruction": "Construct plumbing diagrams for a two-story house"}
+{"id": "seed-000447", "instruction": "Compare student debt crisis in the US and Canada."}
+{"id": "seed-000448", "instruction": "List the benefits of Amazon Web Services."}
+{"id": "seed-000449", "instruction": "Generate a limerick poem about a lemur."}
+{"id": "seed-000450", "instruction": "Describe the functions of the Endoplasmic Reticulum."}
+{"id": "seed-000451", "instruction": "Summarize the industrial revolution."}
+{"id": "seed-000452", "instruction": "Rewrite the sentence, replacing the idioms with their literal meanings.\n\nInput: We need to break the ice with the new team members."}
+{"id": "seed-000453", "instruction": "Select the correct term for the phrase ‘the art of making things’"}
+{"id": "seed-000454", "instruction": "Identify any usage errors in the following sentence.\n\nInput: We all need to take a walk on the wile side."}
+{"id": "seed-000455", "instruction": "Explain the concept of net neutrality."}
+{"id": "seed-000456", "instruction": "Brainstorm creative ideas for designing a conference room."}
+{"id": "seed-000457", "instruction": "Calculate the area of a square with the sides of 10cm."}
+{"id": "seed-000458", "instruction": "List the countries that are in the Schengen area."}
+{"id": "seed-000459", "instruction": "Describe the form and structure of a haiku poem."}
+{"id": "seed-000460", "instruction": "Explain how a random forest algorithm achieves higher accuracy than individual decision trees."}
+{"id": "seed-000461", "instruction": "Give an example of a place where an endangered species of animal might be found."}
+{"id": "seed-000462", "instruction": "Create a pop quiz about clouds."}
+{"id": "seed-000463", "instruction": "Explain why trade protectionism can hurt the economy of a country."}
+{"id": "seed-000464", "instruction": "Come up with a slogan to describe a new lipstick product."}
+{"id": "seed-000465", "instruction": "Describe how a Docker container works."}
+{"id": "seed-000466", "instruction": "Given an economic concept, define it in simple terms.\n\nInput: Inflation"}
+{"id": "seed-000467", "instruction": "Propose a transportation solution for a city with rapid population growth."}
+{"id": "seed-000468", "instruction": "Identify a potential security threat for a global online financial system."}
+{"id": "seed-000469", "instruction": "Describe what it takes to be a successful manager."}
+{"id": "seed-000470", "instruction": "Arrange the given sentences into a well-structured paragraph.\n\nInput: Many of the world’s problems can be traced back to a lack of education. People must be provided with a good foundation in education. Education has the power to provide societies with long-term solutions."}
+{"id": "seed-000471", "instruction": "Construct a timeline for the coronavirus outbreak."}
+{"id": "seed-000472", "instruction": "Compare and contrast two types of computer networks."}
+{"id": "seed-000473", "instruction": "Describe how machine learning can be used to automate mundane tasks."}
+{"id": "seed-000474", "instruction": "Write a blog post on how to deploy machine learning models."}
+{"id": "seed-000475", "instruction": "Classify the following sentence into one of the following labels: [positive, negative, neutral]\n\nInput: My laptop seems to be slow today."}
+{"id": "seed-000476", "instruction": "Generate a list of five elements for a grocery shopping list"}
+{"id": "seed-000477", "instruction": "Create a dialogue between a customer and a flight attendant for a plane ride"}
+{"id": "seed-000478", "instruction": "Generate a design specification for the following product\n\nInput: Product: Coffee maker"}
+{"id": "seed-000479", "instruction": "Evaluate the following statement\n\nInput: AI is the new electricity."}
+{"id": "seed-000480", "instruction": "Compose a simple melody for the following lyrics.\n\nInput: \"I can't find the words to say, but I'm feeling OK\""}
+{"id": "seed-000481", "instruction": "Suggest an alternative to the following sentence.\n\nInput: The cat was walking around the house"}
+{"id": "seed-000482", "instruction": "Explain what a decision tree is."}
+{"id": "seed-000483", "instruction": "Design a function to count the number of unique characters in a string.\n\nInput: string = “Butterflies”"}
+{"id": "seed-000484", "instruction": "Suggest a good screen capture tool for Mac."}
+{"id": "seed-000485", "instruction": "Summarize the main argument of the paper \"A Social Network that Influences Attitudes and Behaviors\""}
+{"id": "seed-000486", "instruction": "Write a Python function that takes two integers and returns their least common multiple."}
+{"id": "seed-000487", "instruction": "Rewrite the following paragraph in the active voice\n\nInput: The new policy will be implemented by the employees in the management department."}
+{"id": "seed-000488", "instruction": "Generate three different ways to greet the user."}
+{"id": "seed-000489", "instruction": "Name one way to start a conversation with someone you don't know."}
+{"id": "seed-000490", "instruction": "Compose a poem about a single color."}
+{"id": "seed-000491", "instruction": "Provide the answer to the equation.\n\nInput: 7 + 6"}
+{"id": "seed-000492", "instruction": "Write a limerick about a holiday."}
+{"id": "seed-000493", "instruction": "Provide a definition of the word \"vacillation\"."}
+{"id": "seed-000494", "instruction": "Write a haiku about the ocean."}
+{"id": "seed-000495", "instruction": "Organize the following words into a meaningful sentence.\n\nInput: tall life the in"}
+{"id": "seed-000496", "instruction": "Sort the following items into two categories.\n\nInput: pencil, apple, phone"}
+{"id": "seed-000497", "instruction": "Rewrite the following sentence with more accurate grammar.\n\nInput: She done a lot of good"}
+{"id": "seed-000498", "instruction": "Name three government positions in the United States."}
+{"id": "seed-000499", "instruction": "Improve the following sentence by using a better transition.\n\nInput: We did not have enough time so we had to leave."}

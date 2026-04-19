@@ -1,0 +1,53 @@
+# DataSmith — 本地 vLLM 服务端完整流水线配置模板
+# 适用场景：本地部署 Qwen2.5-7B (或其他模型)，生成 + LLMJudge 质量筛选
+
+name: vllm-local-pipeline
+
+source:
+  type: jsonl
+  path: ./demo/datasets/general_instructions_10k.jsonl
+
+pipeline:
+  - step: generate
+    strategy: evol-instruct
+    depth: 2
+    mutation_types:
+      - constraints
+      - deepen
+      - concretize
+    use_system_prompt: true         # 开启可让 vLLM KV prefix cache 命中，提升 ~12% 吞吐
+    prefix_aware_scheduling: true
+    llm:
+      provider: vllm
+      model: Qwen/Qwen2.5-7B-Instruct
+      base_url: http://localhost:8000/v1   # 替换为你的 vLLM 服务地址
+      concurrency: 50
+
+  - step: evaluate
+    evaluator: llm-judge
+    criteria: helpfulness
+    threshold: 3.5
+    eval_max_tokens: 3              # 限制 judge 输出 token 数，评估速度提升 5×
+    llm:
+      provider: vllm
+      model: Qwen/Qwen2.5-7B-Instruct
+      base_url: http://localhost:8000/v1
+
+  - step: evaluate
+    evaluator: regex-filter
+    blacklist_patterns:
+      - "I cannot"
+      - "I'm sorry, but"
+      - "As an AI language model"
+      - "I don't have the ability"
+
+sink:
+  path: ./output/vllm_output.jsonl
+  checkpoint_dir: ./.datasmith_runs
+  dead_letter_path: ./output/rejected.jsonl
+
+concurrency: 50
+mode: streaming                     # 大规模数据集推荐 streaming 模式，内存友好
+
+# 启动 vLLM 服务示例：
+# vllm serve Qwen/Qwen2.5-7B-Instruct --port 8000 --served-model-name Qwen/Qwen2.5-7B-Instruct

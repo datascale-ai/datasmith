@@ -5,6 +5,7 @@ export default {
     publications: 'Publications',
     news: 'News',
     resources: 'Resources',
+    api: 'API',
     team: 'Team',
   },
   footer: {
@@ -130,26 +131,27 @@ export default {
         icon: '📦',
         title: 'Datasets',
         items: [
-          { name: 'seeds_1k.jsonl', desc: '1,000 seed instruction dataset for quick experiments', link: 'https://github.com/datascale-ai/datasmith' },
-          { name: 'seeds_10k.jsonl', desc: '10,000 high-quality seed instruction dataset', link: 'https://github.com/datascale-ai/datasmith' },
+          { name: 'general_instructions_1k.jsonl', desc: '1,000 general English instruction seed dataset for quick experiments and validation', link: 'https://github.com/datascale-ai/datasmith/blob/main/demo/datasets/general_instructions_1k.jsonl' },
+          { name: 'general_instructions_10k.jsonl', desc: '10,000 general English instruction seed dataset for large-scale synthesis tasks', link: 'https://github.com/datascale-ai/datasmith/blob/main/demo/datasets/general_instructions_10k.jsonl' },
+          { name: 'cloud_api_eval_500.jsonl', desc: '500-record subset for cloud API rate-limiter benchmarking (qwen-plus experiment)', link: 'https://github.com/datascale-ai/datasmith/blob/main/demo/datasets/cloud_api_eval_500.jsonl' },
         ],
       },
       {
         icon: '📝',
         title: 'Config Templates',
         items: [
-          { name: 'openai_evol.yaml', desc: 'Standard config for OpenAI + EvolInstruct', link: 'https://github.com/datascale-ai/datasmith/tree/main/configs' },
-          { name: 'vllm_local.yaml', desc: 'Local vLLM server configuration template', link: 'https://github.com/datascale-ai/datasmith/tree/main/configs' },
-          { name: 'cloud_api.yaml', desc: 'Aliyun Bailian / Anthropic cloud API config', link: 'https://github.com/datascale-ai/datasmith/tree/main/configs' },
+          { name: 'openai_evol_instruct.yaml', desc: 'OpenAI GPT-4o-mini + EvolInstruct 3-round mutation + LLMJudge evaluation', link: 'https://github.com/datascale-ai/datasmith/blob/main/demo/configs/openai_evol_instruct.yaml' },
+          { name: 'vllm_local_pipeline.yaml', desc: 'Local vLLM (Qwen2.5-7B) + prefix cache + two-stage pipeline config', link: 'https://github.com/datascale-ai/datasmith/blob/main/demo/configs/vllm_local_pipeline.yaml' },
+          { name: 'cloud_api_rate_limited.yaml', desc: 'Aliyun Bailian / DeepSeek cloud config with dual-bucket rate limiting', link: 'https://github.com/datascale-ai/datasmith/blob/main/demo/configs/cloud_api_rate_limited.yaml' },
         ],
       },
       {
         icon: '🔗',
         title: 'Related Projects',
         items: [
-          { name: 'vLLM', desc: 'High-performance LLM inference engine', link: 'https://github.com/vllm-project/vllm' },
-          { name: 'OpenAI SDK', desc: 'Official Python client for OpenAI', link: 'https://github.com/openai/openai-python' },
-          { name: 'Data-Juicer', desc: 'Alibaba open-source data processing toolkit', link: 'https://github.com/modelscope/data-juicer' },
+          { name: 'vLLM', desc: 'High-performance LLM inference engine — preferred local backend for DataSmith', link: 'https://github.com/vllm-project/vllm' },
+          { name: 'WizardLM', desc: 'Origin of EvolInstruct methodology — the academic foundation of DataSmith synthesis strategies', link: 'https://github.com/nlpxucan/WizardLM' },
+          { name: 'LLaMA-Factory', desc: 'Leading SFT/RLHF fine-tuning framework — consume DataSmith-generated datasets downstream', link: 'https://github.com/hiyouga/LLaMA-Factory' },
         ],
       },
     ],

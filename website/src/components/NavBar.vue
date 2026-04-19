@@ -38,6 +38,7 @@ const links = [
   // { path: '/publications', label: 'nav.publications' },  // 论文待补充后取消注释
   { path: '/news',         label: 'nav.news' },
   { path: '/resources',    label: 'nav.resources' },
+  { path: '/api',          label: 'nav.api' },
   // { path: '/team',         label: 'nav.team' },           // 团队页待补充后取消注释
 ]
 

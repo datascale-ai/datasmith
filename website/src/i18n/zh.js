@@ -5,6 +5,7 @@ export default {
     publications: '论文',
     news: '动态',
     resources: '资源',
+    api: 'API',
     team: '团队',
   },
   footer: {
@@ -130,26 +131,27 @@ export default {
         icon: '📦',
         title: '数据集',
         items: [
-          { name: 'seeds_1k.jsonl', desc: '1000 条种子指令数据集，适用于快速实验', link: 'https://github.com/datascale-ai/datasmith' },
-          { name: 'seeds_10k.jsonl', desc: '10000 条高质量种子数据集', link: 'https://github.com/datascale-ai/datasmith' },
+          { name: 'general_instructions_1k.jsonl', desc: '1,000 条通用英文指令种子数据集，适用于快速实验与功能验证', link: 'https://github.com/datascale-ai/datasmith/blob/main/demo/datasets/general_instructions_1k.jsonl' },
+          { name: 'general_instructions_10k.jsonl', desc: '10,000 条通用英文指令种子数据集，适用于规模化合成任务', link: 'https://github.com/datascale-ai/datasmith/blob/main/demo/datasets/general_instructions_10k.jsonl' },
+          { name: 'cloud_api_eval_500.jsonl', desc: '500 条云端 API 速率限制评测数据集（qwen-plus 实验用）', link: 'https://github.com/datascale-ai/datasmith/blob/main/demo/datasets/cloud_api_eval_500.jsonl' },
         ],
       },
       {
         icon: '📝',
         title: '配置模板',
         items: [
-          { name: 'openai_evol.yaml', desc: 'OpenAI + EvolInstruct 标准配置', link: 'https://github.com/datascale-ai/datasmith/tree/main/configs' },
-          { name: 'vllm_local.yaml', desc: '本地 vLLM 服务端配置模板', link: 'https://github.com/datascale-ai/datasmith/tree/main/configs' },
-          { name: 'cloud_api.yaml', desc: '阿里云百炼 / Anthropic 云端配置', link: 'https://github.com/datascale-ai/datasmith/tree/main/configs' },
+          { name: 'openai_evol_instruct.yaml', desc: 'OpenAI GPT-4o-mini + EvolInstruct 三轮变异 + LLMJudge 评估完整配置', link: 'https://github.com/datascale-ai/datasmith/blob/main/demo/configs/openai_evol_instruct.yaml' },
+          { name: 'vllm_local_pipeline.yaml', desc: '本地 vLLM（Qwen2.5-7B）+ prefix cache + 双阶段流水线配置', link: 'https://github.com/datascale-ai/datasmith/blob/main/demo/configs/vllm_local_pipeline.yaml' },
+          { name: 'cloud_api_rate_limited.yaml', desc: '阿里云百炼 / DeepSeek 云端限速合规配置（双桶限流器）', link: 'https://github.com/datascale-ai/datasmith/blob/main/demo/configs/cloud_api_rate_limited.yaml' },
         ],
       },
       {
         icon: '🔗',
         title: '相关项目',
         items: [
-          { name: 'vLLM', desc: '高性能 LLM 推理引擎', link: 'https://github.com/vllm-project/vllm' },
-          { name: 'OpenAI SDK', desc: '官方 Python 客户端', link: 'https://github.com/openai/openai-python' },
-          { name: 'Data-Juicer', desc: '阿里巴巴开源数据处理工具集', link: 'https://github.com/modelscope/data-juicer' },
+          { name: 'vLLM', desc: '高性能 LLM 推理引擎，DataSmith 本地部署的首选后端', link: 'https://github.com/vllm-project/vllm' },
+          { name: 'WizardLM', desc: 'EvolInstruct 指令变异方法论来源，DataSmith 合成策略的学术基础', link: 'https://github.com/nlpxucan/WizardLM' },
+          { name: 'LLaMA-Factory', desc: '主流 SFT/RLHF 微调框架，接收 DataSmith 合成数据进行下游训练', link: 'https://github.com/hiyouga/LLaMA-Factory' },
         ],
       },
     ],

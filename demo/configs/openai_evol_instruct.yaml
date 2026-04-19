@@ -1,0 +1,46 @@
+# DataSmith — OpenAI + EvolInstruct 配置模板
+# 适用场景：使用 GPT-4o / GPT-4o-mini 对种子指令进行 WizardLM 风格变异，生成高质量 SFT 数据集
+
+name: openai-evol-instruct
+
+source:
+  type: jsonl
+  path: ./demo/datasets/general_instructions_1k.jsonl
+
+pipeline:
+  - step: generate
+    strategy: evol-instruct
+    depth: 3                        # 每条指令变异 3 轮
+    mutation_types:
+      - constraints                  # 添加约束条件
+      - deepen                       # 深化复杂度
+      - concretize                   # 具体化场景
+    require_json: false
+    llm:
+      provider: openai
+      model: gpt-4o-mini
+      api_key: ${OPENAI_API_KEY}    # 从环境变量读取，不要直接写入文件
+      rpm_limit: 500
+      tpm_limit: 200000
+      generation_kwargs:
+        temperature: 0.85
+        max_tokens: 1024
+
+  - step: evaluate
+    evaluator: llm-judge
+    criteria: helpfulness
+    threshold: 4.0
+    llm:
+      provider: openai
+      model: gpt-4o-mini
+      api_key: ${OPENAI_API_KEY}
+      generation_kwargs:
+        max_tokens: 16              # judge 只需输出 1-5 分，限制 token 节省成本
+
+sink:
+  path: ./output/openai_evol_output.jsonl
+  checkpoint_dir: ./.datasmith_runs
+  dead_letter_path: ./output/rejected.jsonl
+
+concurrency: 50
+mode: burst                         # burst 模式：全量载入内存，批量提交，最高吞吐

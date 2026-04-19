@@ -13,20 +13,29 @@
 
 ## Table of Contents
 
-- [What is DataSmith?](#what-is-datasmith)
-- [Before & After](#before--after)
-- [Installation](#installation)
-- [Quick Start](#quick-start)
-- [How It Works](#how-it-works)
-- [CLI Overview](#cli-overview)
-- [Supported Backends](#supported-backends)
-- [Configuration Reference](#configuration-reference)
-- [Key Features](#key-features)
-- [Benchmarks](#benchmarks)
-- [Documentation](#documentation)
-- [Contributing](#contributing)
-- [Citation](#citation)
-- [License](#license)
+- [DataSmith](#datasmith)
+  - [Table of Contents](#table-of-contents)
+  - [What is DataSmith?](#what-is-datasmith)
+  - [Before \& After](#before--after)
+  - [Installation](#installation)
+  - [Quick Start](#quick-start)
+    - [Try it now (no API key)](#try-it-now-no-api-key)
+    - [With a cloud API (OpenAI / DeepSeek)](#with-a-cloud-api-openai--deepseek)
+    - [With a local vLLM server](#with-a-local-vllm-server)
+  - [How It Works](#how-it-works)
+  - [CLI Overview](#cli-overview)
+  - [Supported Backends](#supported-backends)
+  - [Configuration Reference](#configuration-reference)
+  - [Key Features](#key-features)
+  - [Benchmarks](#benchmarks)
+    - [Throughput](#throughput)
+    - [Fault Tolerance (30% random failure injection)](#fault-tolerance-30-random-failure-injection)
+    - [Cloud API Rate Limit Compliance (qwen-plus, RPM=120)](#cloud-api-rate-limit-compliance-qwen-plus-rpm120)
+    - [Distributed Scaling (RayActor, 4× workers)](#distributed-scaling-rayactor-4-workers)
+  - [Documentation](#documentation)
+  - [Contributing](#contributing)
+  - [Citation](#citation)
+  - [License](#license)
 
 ---
 
@@ -317,8 +326,8 @@ All experiments run on Qwen2.5-7B-Instruct unless noted. Statistical tests use t
 | Baseline | DataSmith | Improvement |
 |----------|-----------|-------------|
 | Sequential (1 worker) | 2,419 rec/min | **48×** |
-| Naive Async | 2,419 vs 2,330 rec/min | **+3.82%**, p=0.013, 95% CI=[44.3, 133.6] |
-| Distilabel | — | **+152%** throughput |
+| Naive Async| 1,572 vs 1,402 rec/min | **+12.1%**，p=0.040，Cohen's d=2.79 |
+| Distilabel | 3,188 vs 1,265 rec/min | **+152%**（2.52×） |
 
 ### Fault Tolerance (30% random failure injection)
 

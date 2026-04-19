@@ -48,7 +48,7 @@ export default {
     },
     stats: {
       items: [
-        { value: '+3.82%', label: 'Throughput over NaiveAsync (p=0.013)' },
+        { value: '+12.1%', label: 'Throughput over NaiveAsync' },
         { value: '99.8%', label: 'Completion under 30% fault injection' },
         { value: '5×', label: 'Eval speedup with eval_max_tokens' },
       ],

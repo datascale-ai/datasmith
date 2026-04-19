@@ -35,10 +35,10 @@ const isHome = computed(() => route.path === '/')
 const links = [
   { path: '/',             label: 'nav.home' },
   { path: '/research',     label: 'nav.research' },
-  { path: '/publications', label: 'nav.publications' },
+  // { path: '/publications', label: 'nav.publications' },  // 论文待补充后取消注释
   { path: '/news',         label: 'nav.news' },
   { path: '/resources',    label: 'nav.resources' },
-  { path: '/team',         label: 'nav.team' },
+  // { path: '/team',         label: 'nav.team' },           // 团队页待补充后取消注释
 ]
 
 function onScroll() {

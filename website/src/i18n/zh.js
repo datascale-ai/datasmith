@@ -48,7 +48,7 @@ export default {
     },
     stats: {
       items: [
-        { value: '+3.82%', label: '吞吐量领先 NaiveAsync (p=0.013)' },
+        { value: '+12.1%', label: '吞吐量领先 NaiveAsync' },
         { value: '99.8%', label: '30% 故障注入下任务完成率' },
         { value: '5×', label: 'eval_max_tokens 评估加速比' },
       ],

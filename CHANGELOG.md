@@ -56,6 +56,6 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 ### Performance
 
 - 48× throughput vs sequential baseline
-- +3.82% vs Naive Async (p=0.013, 95% CI=[44.3, 133.6])
+- +12.1%% vs Naive Async
 - 99.9% completion rate under 30% fault injection vs 70.4% for unprotected async
 - Linear distributed scaling: 5,361 rpm at 4× workers (90.5% efficiency)

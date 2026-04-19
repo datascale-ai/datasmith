@@ -14,7 +14,7 @@
     </div>
     <div class="footer-bottom container">
       <span>© 2026 DataSmith Team. MIT License.</span>
-      <span>{{ t('footer.contact') }}: <a href="mailto:contact@datasmith.ai">contact@datasmith.ai</a></span>
+      <span>{{ t('footer.contact') }}: <a href="mailto:github.com/datascale-ai/datasmith/issues">github.com/datascale-ai/datasmith/issues</a></span>
     </div>
   </footer>
 </template>

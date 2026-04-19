@@ -77,7 +77,12 @@ class TokenBucketRateLimiter:
                     self._tpm_tokens -= ftokens
                     return
                 wait_time = self._time_until_available(tokens)
-            logger.debug("Rate limit reached, waiting %.3fs (rpm=%.1f, tpm=%.1f)", wait_time, self._rpm_tokens, self._tpm_tokens)
+            logger.debug(
+                "Rate limit reached, waiting %.3fs (rpm=%.1f, tpm=%.1f)",
+                wait_time,
+                self._rpm_tokens,
+                self._tpm_tokens,
+            )
             await asyncio.sleep(wait_time)
 
     def sync_from_headers(

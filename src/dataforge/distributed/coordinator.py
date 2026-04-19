@@ -13,6 +13,7 @@ Usage::
     coordinator = Coordinator(config)
     result = await coordinator.run()
 """
+
 from __future__ import annotations
 
 import asyncio
@@ -33,6 +34,7 @@ logger = logging.getLogger(__name__)
 def _import_redis():
     try:
         import redis.asyncio as aioredis
+
         return aioredis
     except ImportError:
         raise ImportError(
@@ -112,7 +114,9 @@ class Coordinator:
             already_done = total_records - enqueued
             logger.info(
                 "Coordinator: %d total records, %d already done, %d enqueued",
-                total_records, already_done, enqueued,
+                total_records,
+                already_done,
+                enqueued,
             )
 
             if enqueued == 0:
@@ -138,9 +142,7 @@ class Coordinator:
             async with self._checkpoint:
                 with open(output_path, "a", encoding="utf-8") as out_file:
                     while processed < enqueued and not self._shutdown:
-                        msg = await pubsub.get_message(
-                            ignore_subscribe_messages=True, timeout=1.0
-                        )
+                        msg = await pubsub.get_message(ignore_subscribe_messages=True, timeout=1.0)
                         if msg is None:
                             continue
                         if msg["type"] != "message":
@@ -165,7 +167,11 @@ class Coordinator:
                             if processed % 100 == 0:
                                 logger.info(
                                     "Progress: %d/%d (completed=%d, rejected=%d, failed=%d)",
-                                    processed, enqueued, completed, rejected, failed,
+                                    processed,
+                                    enqueued,
+                                    completed,
+                                    rejected,
+                                    failed,
                                 )
                         except (json.JSONDecodeError, KeyError) as e:
                             logger.warning("Malformed result message: %s", e)
@@ -179,7 +185,11 @@ class Coordinator:
 
             logger.info(
                 "Coordinator finished: %d completed, %d rejected, %d failed in %.1fs (%.1f rec/s)",
-                total_completed, rejected, failed, elapsed, rps,
+                total_completed,
+                rejected,
+                failed,
+                elapsed,
+                rps,
             )
 
             return PipelineResult(

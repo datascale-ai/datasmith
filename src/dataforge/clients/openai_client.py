@@ -5,7 +5,6 @@ import logging
 import time
 
 import openai
-
 from datasmith.clients.base import BaseLLMClient
 
 logger = logging.getLogger(__name__)
@@ -63,11 +62,7 @@ class OpenAIClient(BaseLLMClient):
                 prompt=prompt,
                 estimated_prompt_tokens=estimated_tokens,
             )
-        messages = (
-            prompt
-            if isinstance(prompt, list)
-            else [{"role": "user", "content": prompt}]
-        )
+        messages = prompt if isinstance(prompt, list) else [{"role": "user", "content": prompt}]
         gen_kwargs = {**self.generation_kwargs, **kwargs}
         logger.debug("Calling %s model=%s", self.base_url or "openai", self.model)
         started_at = time.monotonic()
@@ -129,14 +124,14 @@ class OpenAIClient(BaseLLMClient):
         """Extract rate limit headers from API response and sync to rate limiter."""
         try:
             # The OpenAI SDK stores the raw httpx response
-            raw = getattr(response, '_response', None)
+            raw = getattr(response, "_response", None)
             if raw is None:
                 return
-            headers = getattr(raw, 'headers', None)
+            headers = getattr(raw, "headers", None)
             if headers is None:
                 return
-            remaining_requests = headers.get('x-ratelimit-remaining-requests')
-            remaining_tokens = headers.get('x-ratelimit-remaining-tokens')
+            remaining_requests = headers.get("x-ratelimit-remaining-requests")
+            remaining_tokens = headers.get("x-ratelimit-remaining-tokens")
             if remaining_requests is not None or remaining_tokens is not None:
                 self._rate_limiter.sync_from_headers(
                     remaining_requests=int(remaining_requests) if remaining_requests else None,

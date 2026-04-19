@@ -12,7 +12,6 @@ from collections import deque
 from typing import Any
 
 import aiofiles
-
 from datasmith.engine.checkpoint import CheckpointManager
 from datasmith.engine.concurrency import AdaptiveSemaphore
 from datasmith.engine.retry import RetryEngine
@@ -71,7 +70,7 @@ def _plan_zero_overhead_batch(
     """
     planned = [
         (record_id, seed_data, mutation, messages)
-        for (record_id, seed_data), (mutation, messages) in zip(
+        for (record_id, seed_data), (mutation, messages) in zip(  # noqa: B905
             fast_records,
             prompt_data,
         )
@@ -80,7 +79,9 @@ def _plan_zero_overhead_batch(
     if prefix_aware_scheduling and planned:
         prompt_prefix_key = getattr(client, "_prompt_prefix_key", None)
 
-        def _sort_key(item: tuple[str, dict[str, Any], str, list[dict[str, str]]]) -> tuple[str, str]:
+        def _sort_key(
+            item: tuple[str, dict[str, Any], str, list[dict[str, str]]],
+        ) -> tuple[str, str]:
             mutation = item[2]
             messages = item[3]
             prefix = ""
@@ -93,8 +94,7 @@ def _plan_zero_overhead_batch(
     sub_clients = getattr(client, "_clients", None)
     if not sub_clients:
         compact = [
-            (record_id, seed_data, messages)
-            for record_id, seed_data, _, messages in planned
+            (record_id, seed_data, messages) for record_id, seed_data, _, messages in planned
         ]
         return compact, [client._aclient] * len(planned)
 
@@ -130,7 +130,9 @@ def _plan_zero_overhead_batch(
             for endpoint_key in endpoint_order:
                 ordered.extend(per_endpoint[endpoint_key])
 
-        compact = [(record_id, seed_data, messages) for record_id, seed_data, messages, _ in ordered]
+        compact = [
+            (record_id, seed_data, messages) for record_id, seed_data, messages, _ in ordered
+        ]
         raw_callers = [aclient for _, _, _, aclient in ordered]
         return compact, raw_callers
 
@@ -215,7 +217,9 @@ class Pipeline:
                 if method is not None:
                     await method(*args, **kwargs)
             except Exception:
-                logger.debug("Hook %s.%s raised an exception", type(hook).__name__, event, exc_info=True)
+                logger.debug(
+                    "Hook %s.%s raised an exception", type(hook).__name__, event, exc_info=True
+                )
 
     async def _count_lines(self, path: str) -> int:
         """Count non-empty lines in a file (for progress bar total)."""
@@ -239,6 +243,7 @@ class Pipeline:
                 TimeElapsedColumn,
                 TimeRemainingColumn,
             )
+
             console = Console()
             if not console.is_terminal:
                 return None
@@ -293,9 +298,7 @@ class Pipeline:
 
             if passed:
                 record.status = RecordStatus.COMPLETED
-                record.metadata["timestamp"] = time.strftime(
-                    "%Y-%m-%dT%H:%M:%SZ", time.gmtime()
-                )
+                record.metadata["timestamp"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
             else:
                 record.status = RecordStatus.REJECTED
                 logger.debug("Record %s rejected by evaluator", record.id)
@@ -377,22 +380,19 @@ class Pipeline:
                     if fast_apply_seed_data is not None:
                         fast_records.append((record_id, raw))
                     else:
-                        records.append(
-                            DataRecord(id=record_id, seed_data=raw)
-                        )
+                        records.append(DataRecord(id=record_id, seed_data=raw))
                     continue
                 if checkpoint is None or not await checkpoint.is_done(record_id):
                     if fast_apply_seed_data is not None:
                         fast_records.append((record_id, raw))
                     else:
-                        records.append(
-                            DataRecord(id=record_id, seed_data=raw)
-                        )
+                        records.append(DataRecord(id=record_id, seed_data=raw))
 
         total = len(fast_records) if fast_apply_seed_data is not None else len(records)
         logger.info(
             "Burst mode: %d pending records, concurrency=%d",
-            total, concurrency,
+            total,
+            concurrency,
         )
         await self._emit(
             "on_pipeline_start",
@@ -412,9 +412,7 @@ class Pipeline:
         # ── Process function ─────────────────────────────────────
         use_adaptive = self.adaptive_concurrency
         if use_adaptive:
-            sem = AdaptiveSemaphore(
-                initial=concurrency, max_concurrency=concurrency * 2
-            )
+            sem = AdaptiveSemaphore(initial=concurrency, max_concurrency=concurrency * 2)
         else:
             sem = asyncio.Semaphore(concurrency)
         completed: list[DataRecord] = []
@@ -510,9 +508,7 @@ class Pipeline:
                     try:
                         _set_record_attr(record, "status", RecordStatus.FAILED)
                         record.metadata["error"] = str(e)[:2000]
-                        logger.error(
-                            "Record %s failed: %s", record.id, str(e)[:200]
-                        )
+                        logger.error("Record %s failed: %s", record.id, str(e)[:200])
                     except Exception:
                         record.metadata["error"] = "<error handler failed>"
                 finally:
@@ -610,7 +606,9 @@ class Pipeline:
                         try:
                             synthetic_data = await fast_apply_seed_data(seed_data)
                         except Exception:
-                            retry_engine = RetryEngine(max_retries=max_retries, base_delay=self.retry_base_delay)
+                            retry_engine = RetryEngine(
+                                max_retries=max_retries, base_delay=self.retry_base_delay
+                            )
 
                             async def _attempt() -> dict[str, Any]:
                                 return await fast_apply_seed_data(seed_data)
@@ -643,9 +641,7 @@ class Pipeline:
                 logger.info("Zero-overhead burst path activated")
                 client = self.strategy.llm
                 # Pre-compute all prompts synchronously before timing
-                prompt_data = self.strategy.build_prompts(
-                    [sd for _, sd in fast_records]
-                )
+                prompt_data = self.strategy.build_prompts([sd for _, sd in fast_records])
 
                 # Connection warmup — send one cheap request per endpoint per mutation type.
                 # Warming up all distinct mutation-type system prompts ensures every
@@ -656,12 +652,9 @@ class Pipeline:
                     if mutation not in seen_mutations:
                         seen_mutations[mutation] = messages
                 warmup_msgs_list = list(seen_mutations.values()) or (
-                    [prompt_data[0][1]] if prompt_data
-                    else [[{"role": "user", "content": "hi"}]]
+                    [prompt_data[0][1]] if prompt_data else [[{"role": "user", "content": "hi"}]]
                 )
-                warmup_clients = (
-                    getattr(client, "_clients", None) or [client]
-                )
+                warmup_clients = getattr(client, "_clients", None) or [client]
                 await asyncio.gather(
                     *[
                         c.generate_raw(wmsg, max_tokens=1)
@@ -686,6 +679,7 @@ class Pipeline:
                 # from inflating elapsed time — especially important for fast models
                 # (e.g. 1.5B) where pipeline overhead is a meaningful fraction of total time.
                 import gc as _gc
+
                 _gc.collect()
 
                 start_time = time.monotonic()
@@ -709,13 +703,19 @@ class Pipeline:
                                 create_kwargs["max_tokens"] = _max_tokens
                             resp = await aclient.chat.completions.create(**create_kwargs)
                             fast_completed.append(
-                                (record_id, seed_data, {"instruction": (resp.choices[0].message.content or "").strip()})
+                                (
+                                    record_id,
+                                    seed_data,
+                                    {
+                                        "instruction": (
+                                            resp.choices[0].message.content or ""
+                                        ).strip()
+                                    },
+                                )
                             )
                         except Exception as e:
                             failed_count += 1
-                            logger.error(
-                                "Record %s failed: %s", record_id, str(e)[:200]
-                            )
+                            logger.error("Record %s failed: %s", record_id, str(e)[:200])
 
                 await asyncio.gather(
                     *[
@@ -736,12 +736,24 @@ class Pipeline:
                             getattr(self.strategy, "supports_build_prompts", False)
                             and hasattr(self.strategy, "build_prompts")
                         )
-                        else [next(iter(
-                            msgs for _, msgs in self.strategy.build_prompts(
-                                [(records[0].seed_data if records else fast_records[0][1]
-                                  if fast_records else {})]
+                        else [
+                            next(
+                                iter(
+                                    msgs
+                                    for _, msgs in self.strategy.build_prompts(
+                                        [
+                                            (
+                                                records[0].seed_data
+                                                if records
+                                                else fast_records[0][1]
+                                                if fast_records
+                                                else {}
+                                            )
+                                        ]
+                                    )
+                                )
                             )
-                        ))]
+                        ]
                     )
                     warmup_callers = getattr(gen_client, "_clients", None) or [gen_client]
                     warmup_tasks = [
@@ -762,7 +774,9 @@ class Pipeline:
                             warmup_prompt = warmup_prompt_fn()
                             eval_client = getattr(evaluator, "llm", None)
                             if eval_client is not None:
-                                eval_callers = getattr(eval_client, "_clients", None) or [eval_client]
+                                eval_callers = getattr(eval_client, "_clients", None) or [
+                                    eval_client
+                                ]
                                 eval_warmup = [
                                     c.generate_raw(
                                         [{"role": "user", "content": warmup_prompt}],
@@ -777,6 +791,7 @@ class Pipeline:
                     pass  # warmup is best-effort; never block the pipeline
 
                 import gc as _gc
+
                 _gc.collect()
                 start_time = time.monotonic()
                 window_size = self.burst_window_size or total
@@ -876,9 +891,7 @@ class Pipeline:
             PipelineResult with execution statistics.
         """
         if mode == "burst":
-            return await self._run_burst(
-                input_path, output_path, concurrency, show_progress
-            )
+            return await self._run_burst(input_path, output_path, concurrency, show_progress)
         # Default: streaming mode
         # Ensure a MetricsCollector is present
         metrics = None
@@ -920,14 +933,19 @@ class Pipeline:
         shutdown_event = asyncio.Event()
         adaptive_sem: AdaptiveSemaphore | None = None
         if self.adaptive_concurrency:
-            adaptive_sem = AdaptiveSemaphore(
-                initial=concurrency, max_concurrency=concurrency * 2
-            )
+            adaptive_sem = AdaptiveSemaphore(initial=concurrency, max_concurrency=concurrency * 2)
         logger.info(
             "Starting pipeline: input=%s, output=%s, concurrency=%d",
-            input_path, output_path, concurrency,
+            input_path,
+            output_path,
+            concurrency,
         )
-        await self._emit("on_pipeline_start", input_path=input_path, output_path=output_path, concurrency=concurrency)
+        await self._emit(
+            "on_pipeline_start",
+            input_path=input_path,
+            output_path=output_path,
+            concurrency=concurrency,
+        )
 
         # Graceful shutdown handler
         def _request_shutdown() -> None:
@@ -954,7 +972,11 @@ class Pipeline:
                             continue
                         raw = json.loads(line)
                         record_id = raw.get("id")
-                        record = DataRecord(seed_data=raw) if record_id is None else DataRecord(id=record_id, seed_data=raw)
+                        record = (
+                            DataRecord(seed_data=raw)
+                            if record_id is None
+                            else DataRecord(id=record_id, seed_data=raw)
+                        )
                         if checkpoint is not None and await checkpoint.is_done(record.id):
                             continue
                         await queue.put(record)
@@ -985,9 +1007,7 @@ class Pipeline:
 
             while True:
                 try:
-                    record = await asyncio.wait_for(
-                        write_queue.get(), timeout=self.flush_timeout
-                    )
+                    record = await asyncio.wait_for(write_queue.get(), timeout=self.flush_timeout)
                 except asyncio.TimeoutError:
                     await _flush_batch()
                     batch = []

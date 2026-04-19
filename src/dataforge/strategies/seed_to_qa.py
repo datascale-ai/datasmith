@@ -17,8 +17,8 @@ _QA_PROMPT = (
     "based on its content.\n\n"
     "Passage:\n{passage}\n\n"
     "Difficulty level(s): {levels}\n\n"
-    "Return a JSON array of objects, each with \"question\", \"answer\", and "
-    "\"difficulty\" keys. Output ONLY the JSON array, no explanation.\n\n"
+    'Return a JSON array of objects, each with "question", "answer", and '
+    '"difficulty" keys. Output ONLY the JSON array, no explanation.\n\n'
     "Example format:\n"
     '[{{"question": "...", "answer": "...", "difficulty": "easy"}}]'
 )
@@ -65,9 +65,7 @@ class SeedToQA(BaseStrategy):
     async def apply(self, record: DataRecord) -> DataRecord:
         passage = record.seed_data.get(self.source_field, "")
         if not passage:
-            raise ValueError(
-                f"seed_data missing required field {self.source_field!r}"
-            )
+            raise ValueError(f"seed_data missing required field {self.source_field!r}")
 
         prompt = _QA_PROMPT.format(
             n=self.qa_per_passage,

@@ -56,9 +56,7 @@ class Paraphrase(BaseStrategy):
     async def apply(self, record: DataRecord) -> DataRecord:
         text = record.seed_data.get(self.source_field, "")
         if not text:
-            raise ValueError(
-                f"seed_data missing required field {self.source_field!r}"
-            )
+            raise ValueError(f"seed_data missing required field {self.source_field!r}")
 
         if self.n_variants == 1:
             prompt = _PARAPHRASE_PROMPT.format(text=text)
@@ -97,7 +95,7 @@ class Paraphrase(BaseStrategy):
                 for sep in (". ", ") ", ": "):
                     prefix = f"{i}{sep}"
                     if stripped.startswith(prefix):
-                        stripped = stripped[len(prefix):]
+                        stripped = stripped[len(prefix) :]
                         break
             variants.append(stripped)
         return variants[:expected] if len(variants) >= expected else variants

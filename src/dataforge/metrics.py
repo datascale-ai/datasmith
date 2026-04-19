@@ -11,6 +11,7 @@ Usage::
     result = await pipeline.run(..., hooks=[metrics])
     print(result)  # PipelineResult with all stats
 """
+
 from __future__ import annotations
 
 import json
@@ -82,7 +83,9 @@ class MetricsCollector(PipelineHook):
         self._evaluator_breakdown: dict[str, dict[str, int]] = {}
         self.result: PipelineResult | None = None
 
-    async def on_pipeline_start(self, *, input_path: str, output_path: str, concurrency: int) -> None:
+    async def on_pipeline_start(
+        self, *, input_path: str, output_path: str, concurrency: int
+    ) -> None:
         self._start_time = time.monotonic()
 
     async def on_record_completed(self, record: DataRecord) -> None:
@@ -115,9 +118,7 @@ class MetricsCollector(PipelineHook):
                 else None
             ),
             assessment_pass_rate=(
-                self._assessment_passes / self._assessment_total
-                if self._assessment_total
-                else None
+                self._assessment_passes / self._assessment_total if self._assessment_total else None
             ),
             evaluator_breakdown=json.loads(json.dumps(self._evaluator_breakdown)),
         )

@@ -127,9 +127,7 @@ def _render_html(summary: DatasetAssessmentSummary) -> str:
         f"<li><strong>{html.escape(str(key))}:</strong> {html.escape(str(value))}</li>"
         for key, value in sorted(summary.dataset_metrics.items())
     )
-    warning_items = "".join(
-        f"<li>{html.escape(warning)}</li>" for warning in summary.warnings
-    )
+    warning_items = "".join(f"<li>{html.escape(warning)}</li>" for warning in summary.warnings)
     return (
         "<html><body>"
         f"<h1>Assessment Report: {html.escape(summary.suite)}</h1>"

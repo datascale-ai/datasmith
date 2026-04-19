@@ -1,5 +1,6 @@
 # src/datasmith/io.py
 """Multi-format I/O readers and writers for pipeline data."""
+
 from __future__ import annotations
 
 import csv
@@ -38,8 +39,7 @@ def read_parquet(path: str) -> list[dict[str, Any]]:
         import pyarrow.parquet as pq
     except ImportError:
         raise ImportError(
-            "pyarrow is required for Parquet support. "
-            "Install it with: pip install pyarrow"
+            "pyarrow is required for Parquet support. Install it with: pip install pyarrow"
         ) from None
 
     table = pq.read_table(path)
@@ -106,8 +106,7 @@ def write_parquet_records(records: list[dict[str, Any]], path: str) -> None:
         import pyarrow.parquet as pq
     except ImportError:
         raise ImportError(
-            "pyarrow is required for Parquet support. "
-            "Install it with: pip install pyarrow"
+            "pyarrow is required for Parquet support. Install it with: pip install pyarrow"
         ) from None
 
     if not records:

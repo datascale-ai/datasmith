@@ -27,9 +27,7 @@ class vLLMClusterClient(BaseLLMClient):
         if not normalized_urls:
             raise ValueError("base_urls must contain at least one non-empty URL")
         if routing_strategy not in {"round_robin", "prefix_affinity"}:
-            raise ValueError(
-                "routing_strategy must be 'round_robin' or 'prefix_affinity'"
-            )
+            raise ValueError("routing_strategy must be 'round_robin' or 'prefix_affinity'")
 
         self.base_urls = normalized_urls
         self.routing_strategy = routing_strategy

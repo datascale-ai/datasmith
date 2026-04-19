@@ -74,7 +74,11 @@ class LLMJudge(BaseEvaluator):
             )
         record.score = score
         criteria_name = next(
-            (name for name, prompt_text in self._BUILTIN_CRITERIA.items() if prompt_text == self._criteria_prompt),
+            (
+                name
+                for name, prompt_text in self._BUILTIN_CRITERIA.items()
+                if prompt_text == self._criteria_prompt
+            ),
             "custom",
         )
         passed = score >= self.threshold

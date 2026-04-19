@@ -5,6 +5,7 @@ Provides both a standalone :class:`SemanticDeduplicator` for batch
 post-processing and an inline :class:`DedupEvaluator` that rejects records
 too similar to previously accepted ones during pipeline execution.
 """
+
 from __future__ import annotations
 
 import asyncio
@@ -14,7 +15,6 @@ import time
 from typing import Any
 
 import openai
-
 from datasmith.assessment.schema import AssessmentResult
 from datasmith.evaluators.base import BaseEvaluator
 from datasmith.registry import register_evaluator
@@ -27,7 +27,7 @@ def _cosine_similarity(a: list[float], b: list[float]) -> float:
     """Compute cosine similarity between two vectors."""
     if len(a) != len(b):
         raise ValueError("Embedding vectors must have the same dimensionality")
-    dot = sum(x * y for x, y in zip(a, b))
+    dot = sum(x * y for x, y in zip(a, b, strict=False))
     norm_a = math.sqrt(sum(x * x for x in a))
     norm_b = math.sqrt(sum(x * x for x in b))
     if norm_a == 0 or norm_b == 0:
@@ -70,9 +70,7 @@ class SemanticDeduplicator:
         self.embedding_model = embedding_model
         self._client = openai.AsyncOpenAI(api_key=api_key, base_url=base_url)
 
-    async def _get_embeddings_batch(
-        self, texts: list[str]
-    ) -> list[list[float]]:
+    async def _get_embeddings_batch(self, texts: list[str]) -> list[list[float]]:
         """Fetch embeddings for a batch of texts."""
         response = await self._client.embeddings.create(
             model=self.embedding_model,
@@ -80,9 +78,7 @@ class SemanticDeduplicator:
         )
         return [item.embedding for item in response.data]
 
-    async def _get_all_embeddings(
-        self, texts: list[str]
-    ) -> list[list[float]]:
+    async def _get_all_embeddings(self, texts: list[str]) -> list[list[float]]:
         """Fetch embeddings for all texts, batching as needed."""
         all_embeddings: list[list[float]] = []
         for i in range(0, len(texts), self.batch_size):
@@ -91,9 +87,7 @@ class SemanticDeduplicator:
             all_embeddings.extend(embeddings)
         return all_embeddings
 
-    async def deduplicate(
-        self, records: list[dict[str, Any]]
-    ) -> list[dict[str, Any]]:
+    async def deduplicate(self, records: list[dict[str, Any]]) -> list[dict[str, Any]]:
         """Remove semantically duplicate records.
 
         Args:

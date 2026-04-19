@@ -12,6 +12,7 @@ Usage::
     worker = DistributedWorker(pipeline, config)
     await worker.run()
 """
+
 from __future__ import annotations
 
 import asyncio
@@ -33,6 +34,7 @@ logger = logging.getLogger(__name__)
 def _import_redis():
     try:
         import redis.asyncio as aioredis
+
         return aioredis
     except ImportError:
         raise ImportError(
@@ -145,7 +147,9 @@ class DistributedWorker:
 
                     # Check for poison pill
                     if raw.get("__poison__"):
-                        logger.info("Worker %s received poison pill, shutting down", self._worker_id)
+                        logger.info(
+                            "Worker %s received poison pill, shutting down", self._worker_id
+                        )
                         break
 
                     total += 1
@@ -165,7 +169,8 @@ class DistributedWorker:
                 if tasks:
                     logger.info(
                         "Worker %s draining %d in-flight tasks...",
-                        self._worker_id, len(tasks),
+                        self._worker_id,
+                        len(tasks),
                     )
                     await asyncio.gather(*tasks, return_exceptions=True)
 
@@ -179,7 +184,13 @@ class DistributedWorker:
         logger.info(
             "Worker %s finished: %d processed (completed=%d, rejected=%d, failed=%d) "
             "in %.1fs (%.1f rec/s)",
-            self._worker_id, total, completed, rejected, failed, elapsed, rps,
+            self._worker_id,
+            total,
+            completed,
+            rejected,
+            failed,
+            elapsed,
+            rps,
         )
 
         return PipelineResult(

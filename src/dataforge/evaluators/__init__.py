@@ -1,5 +1,5 @@
-from datasmith.evaluators.completeness import CompletenessEvaluator
 from datasmith.evaluators.base import BaseEvaluator
+from datasmith.evaluators.completeness import CompletenessEvaluator
 from datasmith.evaluators.length_filter import LengthFilter
 from datasmith.evaluators.length_window import LengthWindowEvaluator
 from datasmith.evaluators.llm_judge import LLMJudge

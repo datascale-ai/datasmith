@@ -136,7 +136,8 @@ class EvolInstruct(BaseStrategy):
         return mutation
 
     def build_prompts(
-        self, seeds: list[dict[str, Any]],
+        self,
+        seeds: list[dict[str, Any]],
     ) -> list[tuple[str, list[dict[str, str]]]]:
         """Pre-compute all prompts for depth=1 in a tight loop.
 
@@ -223,13 +224,16 @@ class EvolInstruct(BaseStrategy):
                 return json.loads(self._extract_json(text))
             except (ValueError, json.JSONDecodeError) as e:
                 if attempt < max_repair_attempts:
-                    logger.warning("JSON parse failed (attempt %d/%d): %s", attempt + 1, max_repair_attempts + 1, e)
+                    logger.warning(
+                        "JSON parse failed (attempt %d/%d): %s",
+                        attempt + 1,
+                        max_repair_attempts + 1,
+                        e,
+                    )
                     repair_prompt = self._REPAIR_TEMPLATE.format(text=text, error=e)
                     text = await self.llm.generate(repair_prompt)
 
-        raise ValueError(
-            f"JSON self-repair exhausted after {max_repair_attempts + 1} attempts"
-        )
+        raise ValueError(f"JSON self-repair exhausted after {max_repair_attempts + 1} attempts")
 
     @staticmethod
     def _extract_json(text: str) -> str:

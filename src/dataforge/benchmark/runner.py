@@ -5,7 +5,6 @@ from pathlib import Path
 from typing import Any
 
 import datasmith.benchmark.tasks  # noqa: F401
-
 from datasmith.benchmark.adapters import LLMCandidateAdapter, LLMJudgeAdapter
 from datasmith.benchmark.reporter import write_benchmark_report
 from datasmith.benchmark.schema import BenchmarkCaseResult, BenchmarkRunSummary
@@ -17,9 +16,7 @@ class BenchmarkRunner:
         self.config = config
         self.candidate = LLMCandidateAdapter(config._candidate_client)
         self.judge = (
-            LLMJudgeAdapter(config._judge_client)
-            if hasattr(config, "_judge_client")
-            else None
+            LLMJudgeAdapter(config._judge_client) if hasattr(config, "_judge_client") else None
         )
 
     async def run(self) -> tuple[Path, BenchmarkRunSummary]:
@@ -101,7 +98,9 @@ class BenchmarkRunner:
         return results
 
     def _resolved_weights(self) -> dict[str, float]:
-        specified = {task.name: task.weight for task in self.config.tasks if task.weight is not None}
+        specified = {
+            task.name: task.weight for task in self.config.tasks if task.weight is not None
+        }
         if len(specified) == len(self.config.tasks):
             total = sum(float(weight) for weight in specified.values())
             return {name: float(weight) / total for name, weight in specified.items()}

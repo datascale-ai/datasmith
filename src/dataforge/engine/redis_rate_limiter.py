@@ -8,6 +8,7 @@ RPM and TPM budget.
 Uses Lua scripts executed atomically to implement sliding-window
 rate limiting for RPM and a decaying counter for TPM.
 """
+
 from __future__ import annotations
 
 import logging
@@ -19,6 +20,7 @@ logger = logging.getLogger(__name__)
 def _import_redis():
     try:
         import redis.asyncio as aioredis
+
         return aioredis
     except ImportError:
         raise ImportError(
@@ -138,9 +140,7 @@ class RedisRateLimiter:
         Args:
             tokens: Number of tokens to consume (for TPM tracking).
         """
-        assert self._redis is not None and self._script is not None, (
-            "Call connect() first"
-        )
+        assert self._redis is not None and self._script is not None, "Call connect() first"
 
         while True:
             now = time.time()
@@ -154,7 +154,9 @@ class RedisRateLimiter:
             wait_seconds = max(int(result) / 1000.0, 0.05)
             logger.debug(
                 "Rate limited (limiter=%s), waiting %.1fs",
-                self._limiter_id, wait_seconds,
+                self._limiter_id,
+                wait_seconds,
             )
             import asyncio
+
             await asyncio.sleep(wait_seconds)

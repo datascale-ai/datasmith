@@ -46,7 +46,9 @@ class IFEvalLiteTask:
                     cases.append(BenchmarkCase.model_validate_json(line))
         return cases
 
-    async def run_case(self, case: BenchmarkCase, candidate: object, judge: object | None) -> BenchmarkCaseResult:
+    async def run_case(
+        self, case: BenchmarkCase, candidate: object, judge: object | None
+    ) -> BenchmarkCaseResult:
         del judge
         started = time.monotonic()
         response = await candidate.generate(case.prompt)

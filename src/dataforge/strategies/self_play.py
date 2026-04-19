@@ -1,5 +1,6 @@
 # src/datasmith/strategies/self_play.py
 """Self-Play strategy: two LLM agents generate multi-turn dialogue data."""
+
 from __future__ import annotations
 
 import logging
@@ -70,19 +71,13 @@ class SelfPlay(BaseStrategy):
     async def apply(self, record: DataRecord) -> DataRecord:
         topic = record.seed_data.get(self.source_field)
         if topic is None:
-            raise ValueError(
-                f"Seed data missing required field '{self.source_field}'"
-            )
+            raise ValueError(f"Seed data missing required field '{self.source_field}'")
 
         conversation: list[dict[str, str]] = []
 
         # Build system prompts
-        sys_a = self.system_prompt_a or _SYSTEM_TEMPLATE.format(
-            role=self.role_a, topic=topic
-        )
-        sys_b = self.system_prompt_b or _SYSTEM_TEMPLATE.format(
-            role=self.role_b, topic=topic
-        )
+        sys_a = self.system_prompt_a or _SYSTEM_TEMPLATE.format(role=self.role_a, topic=topic)
+        sys_b = self.system_prompt_b or _SYSTEM_TEMPLATE.format(role=self.role_b, topic=topic)
 
         # Role A opens the conversation
         opener_prompt = _OPENER_TEMPLATE.format(role=self.role_a, topic=topic)

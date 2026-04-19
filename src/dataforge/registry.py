@@ -15,6 +15,7 @@ Allows dynamic registration via decorators::
 
 Registered plugins are automatically available in YAML configs.
 """
+
 from __future__ import annotations
 
 import logging
@@ -67,9 +68,7 @@ def get_strategy(name: str) -> type:
         return _strategy_registry[name]
     except KeyError:
         available = ", ".join(sorted(_strategy_registry)) or "(none)"
-        raise KeyError(
-            f"Unknown strategy {name!r}. Available: {available}"
-        ) from None
+        raise KeyError(f"Unknown strategy {name!r}. Available: {available}") from None
 
 
 def get_evaluator(name: str) -> type:
@@ -78,9 +77,7 @@ def get_evaluator(name: str) -> type:
         return _evaluator_registry[name]
     except KeyError:
         available = ", ".join(sorted(_evaluator_registry)) or "(none)"
-        raise KeyError(
-            f"Unknown evaluator {name!r}. Available: {available}"
-        ) from None
+        raise KeyError(f"Unknown evaluator {name!r}. Available: {available}") from None
 
 
 def list_strategies() -> dict[str, type]:
@@ -110,9 +107,7 @@ def get_assessment_suite(name: str) -> object:
         return _assessment_suite_registry[name]
     except KeyError:
         available = ", ".join(sorted(_assessment_suite_registry)) or "(none)"
-        raise KeyError(
-            f"Unknown assessment suite {name!r}. Available: {available}"
-        ) from None
+        raise KeyError(f"Unknown assessment suite {name!r}. Available: {available}") from None
 
 
 def list_assessment_suites() -> dict[str, object]:
@@ -136,9 +131,7 @@ def get_benchmark(name: str) -> object:
         return _benchmark_registry[name]
     except KeyError:
         available = ", ".join(sorted(_benchmark_registry)) or "(none)"
-        raise KeyError(
-            f"Unknown benchmark {name!r}. Available: {available}"
-        ) from None
+        raise KeyError(f"Unknown benchmark {name!r}. Available: {available}") from None
 
 
 def list_benchmarks() -> dict[str, object]:
@@ -158,10 +151,16 @@ def _load_entry_points() -> None:
         return
 
     for group in ("datasmith.strategies", "datasmith.evaluators"):
-        eps = entry_points().get(group, []) if callable(getattr(entry_points(), "get", None)) else entry_points(group=group)
+        eps = (
+            entry_points().get(group, [])
+            if callable(getattr(entry_points(), "get", None))
+            else entry_points(group=group)
+        )
         for ep in eps:
             try:
                 ep.load()
                 logger.debug("Loaded plugin entry point: %s (%s)", ep.name, group)
             except Exception:
-                logger.warning("Failed to load plugin entry point: %s (%s)", ep.name, group, exc_info=True)
+                logger.warning(
+                    "Failed to load plugin entry point: %s (%s)", ep.name, group, exc_info=True
+                )

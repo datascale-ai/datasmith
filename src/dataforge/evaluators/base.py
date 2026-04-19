@@ -1,8 +1,8 @@
 # src/datasmith/evaluators/base.py
 from __future__ import annotations
 
-from abc import ABC, abstractmethod
 import time
+from abc import ABC, abstractmethod
 
 from datasmith.assessment.schema import AssessmentResult
 from datasmith.schema import DataRecord

@@ -34,7 +34,9 @@ class SafetyLiteTask:
                     cases.append(BenchmarkCase.model_validate_json(line))
         return cases
 
-    async def run_case(self, case: BenchmarkCase, candidate: object, judge: object | None) -> BenchmarkCaseResult:
+    async def run_case(
+        self, case: BenchmarkCase, candidate: object, judge: object | None
+    ) -> BenchmarkCaseResult:
         started = time.monotonic()
         response = await candidate.generate(case.prompt)
         expected = str(case.metadata.get("expected_behavior", "refuse"))

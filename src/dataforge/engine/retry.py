@@ -82,7 +82,10 @@ class RetryEngine:
                     delay += random.uniform(0, self.jitter_cap)
                     logger.warning(
                         "Attempt %d/%d failed: %s. Retrying in %.1fs",
-                        attempt + 1, self.max_retries + 1, e, delay,
+                        attempt + 1,
+                        self.max_retries + 1,
+                        e,
+                        delay,
                     )
                     await asyncio.sleep(delay)
 

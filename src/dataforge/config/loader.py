@@ -5,7 +5,6 @@ import os
 import re
 
 import yaml
-
 from datasmith.assessment.runner import AssessmentRunner
 from datasmith.benchmark.runner import BenchmarkRunner
 from datasmith.clients import BailianClient, OpenAIClient, vLLMClient, vLLMClusterClient
@@ -94,6 +93,7 @@ def build_client(cfg: LLMConfig) -> BaseLLMClient:
         )
     if cfg.provider == "anthropic" and cfg.base_url is None:
         import warnings
+
         warnings.warn(
             "provider='anthropic' uses the OpenAI-compatible SDK. "
             "Set 'base_url: https://api.anthropic.com/v1' in your config "
@@ -105,8 +105,7 @@ def build_client(cfg: LLMConfig) -> BaseLLMClient:
         return BailianClient(
             model=cfg.model,
             api_key=api_key,
-            base_url=cfg.base_url
-            or "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            base_url=cfg.base_url or "https://dashscope.aliyuncs.com/compatible-mode/v1",
             rpm_limit=cfg.rpm_limit,
             tpm_limit=cfg.tpm_limit,
             generation_kwargs=cfg.generation_kwargs,
@@ -185,18 +184,14 @@ def build_pipeline(config: ForgeConfig) -> tuple[Pipeline, str, str, int]:
     for step in config.pipeline:
         if step.step == "generate":
             if strategy is not None:
-                raise ValueError(
-                    "Pipeline config must contain exactly one 'generate' step"
-                )
+                raise ValueError("Pipeline config must contain exactly one 'generate' step")
             strategy = build_strategy(step)
             concurrency = step.llm.concurrency
         elif step.step == "evaluate":
             evaluators.append(build_evaluator(step))
 
     if strategy is None:
-        raise ValueError(
-            "Pipeline config must contain at least one 'generate' step"
-        )
+        raise ValueError("Pipeline config must contain at least one 'generate' step")
 
     input_path = config.source.path
 

@@ -1,5 +1,6 @@
 # src/datasmith/evaluators/multi_criteria.py
 """Multi-criteria evaluator: evaluates multiple dimensions in a single LLM call."""
+
 from __future__ import annotations
 
 import json
@@ -56,11 +57,15 @@ class MultiCriteriaEvaluator(BaseEvaluator):
         self.llm = llm
         if criteria is not None and not criteria:
             raise ValueError("criteria must contain at least one dimension")
-        self.criteria: dict[str, float] = criteria if criteria is not None else {
-            "helpfulness": 1.0,
-            "accuracy": 1.0,
-            "safety": 1.0,
-        }
+        self.criteria: dict[str, float] = (
+            criteria
+            if criteria is not None
+            else {
+                "helpfulness": 1.0,
+                "accuracy": 1.0,
+                "safety": 1.0,
+            }
+        )
         self.threshold = threshold
         self.max_repair_attempts = max_repair_attempts
 
@@ -101,10 +106,7 @@ class MultiCriteriaEvaluator(BaseEvaluator):
         record.metadata["criteria_scores"] = scores
 
         # Compute weighted average
-        weighted_sum = sum(
-            scores.get(dim, 0.0) * weight
-            for dim, weight in self._weights.items()
-        )
+        weighted_sum = sum(scores.get(dim, 0.0) * weight for dim, weight in self._weights.items())
         record.score = round(weighted_sum, 4)
         record.metadata["weighted_score"] = record.score
 
@@ -120,9 +122,7 @@ class MultiCriteriaEvaluator(BaseEvaluator):
             duration_ms=round((time.monotonic() - started) * 1000.0, 3),
         )
 
-    def _parse_scores(
-        self, text: str, attempt: int
-    ) -> dict[str, float] | None:
+    def _parse_scores(self, text: str, attempt: int) -> dict[str, float] | None:
         """Parse JSON scores from LLM response."""
         # Strip markdown fences
         cleaned = text.strip()

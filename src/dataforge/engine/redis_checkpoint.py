@@ -4,6 +4,7 @@
 Drop-in replacement for CheckpointManager that uses a Redis SET
 to track completed record IDs across multiple worker processes.
 """
+
 from __future__ import annotations
 
 import logging
@@ -15,6 +16,7 @@ logger = logging.getLogger(__name__)
 def _import_redis():
     try:
         import redis.asyncio as aioredis
+
         return aioredis
     except ImportError:
         raise ImportError(
@@ -73,7 +75,8 @@ class RedisCheckpointManager:
         if self._count > 0:
             logger.info(
                 "Redis checkpoint %s: %d records already completed",
-                self._key, self._count,
+                self._key,
+                self._count,
             )
 
     async def commit(self, record_id: str) -> None:

@@ -11,6 +11,7 @@ Job protocol (file-based, no Redis/socket deps):
   pool_inbox/worker_{i}/{job_id}.done     JSON result written by worker
   pool_inbox/worker_{i}/{job_id}.error    JSON error written by worker on failure
 """
+
 from __future__ import annotations
 
 import asyncio
@@ -22,7 +23,7 @@ from typing import Any
 
 logger = logging.getLogger(__name__)
 
-_POLL_INTERVAL = 0.05   # seconds between inbox polls (halved for lower latency)
+_POLL_INTERVAL = 0.05  # seconds between inbox polls (halved for lower latency)
 _SHUTDOWN_SENTINEL = "__SHUTDOWN__"
 _READY_FILE = ".ready"
 
@@ -30,6 +31,7 @@ _READY_FILE = ".ready"
 def _build_pipeline_from_spec(spec: dict[str, Any]):
     """Build a Pipeline from a minimal job spec dict."""
     import sys
+
     _REPO_ROOT = Path(__file__).resolve().parents[3]
     for candidate in (str(_REPO_ROOT / "src"), str(_REPO_ROOT)):
         if candidate not in sys.path:
@@ -63,6 +65,7 @@ def _clear_metrics(pipeline: Any) -> None:
     """Remove stale MetricsCollector so a fresh one is created on next run."""
     try:
         from datasmith.metrics import MetricsCollector
+
         pipeline.hooks = [h for h in pipeline.hooks if not isinstance(h, MetricsCollector)]
     except ImportError:
         pass
@@ -133,7 +136,10 @@ async def _worker_main_async(worker_id: int, inbox_dir: str, spec: dict[str, Any
                 json.dump(done_data, f)
             logger.warning(
                 "Worker %d job %s: %d records in %.1fs",
-                worker_id, job_id, total_records, elapsed,
+                worker_id,
+                job_id,
+                total_records,
+                elapsed,
             )
         except BaseException as exc:  # noqa: BLE001
             logger.error("Worker %d job %s failed: %s", worker_id, job_id, exc, exc_info=True)

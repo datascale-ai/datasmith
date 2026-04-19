@@ -90,9 +90,7 @@ def main() -> None:
     run_parser = subparsers.add_parser(
         "run", help="Run a synthesis pipeline from a YAML config file"
     )
-    run_parser.add_argument(
-        "config", metavar="CONFIG", help="Path to YAML config file"
-    )
+    run_parser.add_argument("config", metavar="CONFIG", help="Path to YAML config file")
     run_parser.add_argument(
         "--dry-run",
         action="store_true",
@@ -127,16 +125,15 @@ def main() -> None:
     validate_parser = subparsers.add_parser(
         "validate", help="Validate a YAML config file without running anything"
     )
-    validate_parser.add_argument(
-        "config", metavar="CONFIG", help="Path to YAML config file"
-    )
+    validate_parser.add_argument("config", metavar="CONFIG", help="Path to YAML config file")
 
     # --- status ---
     status_parser = subparsers.add_parser(
         "status", help="Show checkpoint status for a pipeline run"
     )
     status_parser.add_argument(
-        "checkpoint_dir", metavar="CHECKPOINT_DIR",
+        "checkpoint_dir",
+        metavar="CHECKPOINT_DIR",
         help="Path to the checkpoint directory (e.g. ./.datasmith_runs)",
     )
 
@@ -152,22 +149,20 @@ def main() -> None:
     subparsers.add_parser("version", help="Print the DataSmith version")
 
     # --- shard ---
-    shard_parser = subparsers.add_parser(
-        "shard", help="Distributed file-based sharding commands"
-    )
+    shard_parser = subparsers.add_parser("shard", help="Distributed file-based sharding commands")
     shard_sub = shard_parser.add_subparsers(dest="shard_command", required=True)
 
     # shard split
     split_parser = shard_sub.add_parser("split", help="Split input file into N shards")
     split_parser.add_argument("--input", required=True, help="Path to input file")
-    split_parser.add_argument(
-        "--num-shards", type=int, required=True, help="Number of shards"
-    )
+    split_parser.add_argument("--num-shards", type=int, required=True, help="Number of shards")
     split_parser.add_argument(
         "--output-dir", required=True, help="Directory for shard output files"
     )
     split_parser.add_argument(
-        "--format", default="jsonl", choices=["jsonl", "csv", "parquet"],
+        "--format",
+        default="jsonl",
+        choices=["jsonl", "csv", "parquet"],
         help="Input file format (default: jsonl)",
     )
 
@@ -175,14 +170,14 @@ def main() -> None:
     config_gen_parser = shard_sub.add_parser(
         "config", help="Generate per-shard YAML configs from a template"
     )
-    config_gen_parser.add_argument(
-        "--template", required=True, help="Path to template YAML config"
-    )
+    config_gen_parser.add_argument("--template", required=True, help="Path to template YAML config")
     config_gen_parser.add_argument(
         "--shard-dir", required=True, help="Directory containing shard files"
     )
     config_gen_parser.add_argument(
-        "--api-keys", nargs="*", default=None,
+        "--api-keys",
+        nargs="*",
+        default=None,
         help="API keys to distribute across shards",
     )
 
@@ -194,7 +189,8 @@ def main() -> None:
         "--shard-dir", required=True, help="Directory containing shard configs"
     )
     shard_run_parser.add_argument(
-        "--sequential", action="store_true",
+        "--sequential",
+        action="store_true",
         help="Run shards sequentially instead of in parallel",
     )
 
@@ -203,18 +199,15 @@ def main() -> None:
     merge_parser.add_argument(
         "--shard-dir", required=True, help="Directory containing shard output files"
     )
+    merge_parser.add_argument("--output", required=True, help="Path to final merged output file")
     merge_parser.add_argument(
-        "--output", required=True, help="Path to final merged output file"
-    )
-    merge_parser.add_argument(
-        "--no-dedup", action="store_true",
+        "--no-dedup",
+        action="store_true",
         help="Skip deduplication by record ID",
     )
 
     # shard status
-    shard_status_parser = shard_sub.add_parser(
-        "status", help="Show progress of each shard"
-    )
+    shard_status_parser = shard_sub.add_parser("status", help="Show progress of each shard")
     shard_status_parser.add_argument(
         "--shard-dir", required=True, help="Directory containing shard checkpoints"
     )
@@ -223,11 +216,11 @@ def main() -> None:
     coord_parser = subparsers.add_parser(
         "coordinator", help="Run as distributed coordinator (requires Redis)"
     )
+    coord_parser.add_argument("config", metavar="CONFIG", help="Path to YAML config file")
     coord_parser.add_argument(
-        "config", metavar="CONFIG", help="Path to YAML config file"
-    )
-    coord_parser.add_argument(
-        "--num-workers", type=int, default=4,
+        "--num-workers",
+        type=int,
+        default=4,
         help="Expected number of workers (for progress tracking)",
     )
 
@@ -235,15 +228,16 @@ def main() -> None:
     worker_parser = subparsers.add_parser(
         "worker", help="Run as distributed worker (requires Redis)"
     )
+    worker_parser.add_argument("config", metavar="CONFIG", help="Path to YAML config file")
     worker_parser.add_argument(
-        "config", metavar="CONFIG", help="Path to YAML config file"
-    )
-    worker_parser.add_argument(
-        "--worker-id", default="worker-0",
+        "--worker-id",
+        default="worker-0",
         help="Unique identifier for this worker",
     )
     worker_parser.add_argument(
-        "--concurrency", type=int, default=None,
+        "--concurrency",
+        type=int,
+        default=None,
         help="Override concurrency for this worker",
     )
 
@@ -341,7 +335,6 @@ def _assess(config_path: str, dry_run: bool = False) -> None:
     logger = logging.getLogger(__name__)
 
     import datasmith.assessment.suite  # noqa: F401
-
     from datasmith.config import build_assessment_runner, load_assessment_config
     from datasmith.registry import get_assessment_suite
 
@@ -370,7 +363,6 @@ def _benchmark(config_path: str, dry_run: bool = False) -> None:
     logger = logging.getLogger(__name__)
 
     import datasmith.benchmark.tasks  # noqa: F401
-
     from datasmith.config import build_benchmark_runner, load_benchmark_config
     from datasmith.registry import get_benchmark
 
@@ -444,7 +436,11 @@ def _inspect(output_file: str) -> None:
             total += 1
             try:
                 record = DataRecord.model_validate_json(line)
-                status_name = record.status.value if isinstance(record.status, RecordStatus) else str(record.status)
+                status_name = (
+                    record.status.value
+                    if isinstance(record.status, RecordStatus)
+                    else str(record.status)
+                )
                 status_counts[status_name] = status_counts.get(status_name, 0) + 1
                 if record.score is not None:
                     scores.append(record.score)

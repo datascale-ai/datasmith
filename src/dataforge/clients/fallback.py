@@ -1,5 +1,6 @@
 # src/datasmith/clients/fallback.py
 """Failover LLM client that automatically switches between primary and fallback."""
+
 from __future__ import annotations
 
 import logging
@@ -54,9 +55,7 @@ class FallbackClient(BaseLLMClient):
         self._primary.add_observer(observer)
         self._fallback.add_observer(observer)
 
-    async def generate(
-        self, prompt: str | list[ChatMessage], **kwargs: Any
-    ) -> str:
+    async def generate(self, prompt: str | list[ChatMessage], **kwargs: Any) -> str:
         """Generate text, automatically failing over if primary is unhealthy."""
         # Try primary if it hasn't exceeded failure threshold
         if not self.using_fallback:

@@ -3,8 +3,6 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any, Protocol
 
-from pydantic import BaseModel, Field
-
 from datasmith.assessment.schema import RecordAssessment
 from datasmith.assessment.utils import (
     count_duplicates,
@@ -20,6 +18,7 @@ from datasmith.evaluators.multi_criteria import MultiCriteriaEvaluator
 from datasmith.evaluators.regex_filter import RegexFilter
 from datasmith.evaluators.similarity import SimilarityEvaluator
 from datasmith.registry import register_assessment_suite
+from pydantic import BaseModel, Field
 
 
 class AssessmentSuiteSpec(BaseModel):
@@ -167,14 +166,18 @@ class SFTReadinessSuite:
         fuzzy_hits = 0
         reference_responses = getattr(config, "_reference_responses", [])
         fuzzy_threshold = float(getattr(reference_cfg, "fuzzy_overlap_threshold", 0.8))
-        normalized_reference = {normalize_text(text) for text in reference_responses if normalize_text(text)}
+        normalized_reference = {
+            normalize_text(text) for text in reference_responses if normalize_text(text)
+        }
         for response in responses:
             normalized = normalize_text(response)
             if normalized and normalized in normalized_reference:
                 exact_hits += 1
                 fuzzy_hits += 1
                 continue
-            if any(five_gram_jaccard(response, ref) >= fuzzy_threshold for ref in reference_responses):
+            if any(
+                five_gram_jaccard(response, ref) >= fuzzy_threshold for ref in reference_responses
+            ):
                 fuzzy_hits += 1
         metrics["exact_overlap_rate"] = exact_hits / total
         metrics["fuzzy_overlap_rate"] = fuzzy_hits / total
@@ -186,7 +189,7 @@ class SFTReadinessSuite:
         dataset_metrics: dict[str, Any],
     ) -> float | None:
         component_scores: dict[str, float] = {}
-        for evaluator_name, weight in self.spec.score_weights.items():
+        for evaluator_name, _weight in self.spec.score_weights.items():
             scores = [
                 result.score
                 for record in assessed_records
@@ -199,7 +202,7 @@ class SFTReadinessSuite:
                 component_scores[evaluator_name] = (sum(scores) / len(scores) / 5.0) * 100.0
             else:
                 component_scores[evaluator_name] = (sum(scores) / len(scores)) * 100.0
-        for metric_name, weight in self.spec.dataset_metric_weights.items():
+        for metric_name, _weight in self.spec.dataset_metric_weights.items():
             if metric_name not in dataset_metrics:
                 continue
             value = float(dataset_metrics[metric_name])

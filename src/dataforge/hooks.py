@@ -11,6 +11,7 @@ Example::
             tokens = record.metadata.get("tokens", 0)
             self.total_cost += tokens * PRICE_PER_TOKEN
 """
+
 from __future__ import annotations
 
 from datasmith.schema import DataRecord
@@ -23,7 +24,9 @@ class PipelineHook:
     All methods have no-op defaults so you only implement what you need.
     """
 
-    async def on_pipeline_start(self, *, input_path: str, output_path: str, concurrency: int) -> None:
+    async def on_pipeline_start(
+        self, *, input_path: str, output_path: str, concurrency: int
+    ) -> None:
         """Called once when the pipeline begins execution."""
 
     async def on_record_started(self, record: DataRecord) -> None:

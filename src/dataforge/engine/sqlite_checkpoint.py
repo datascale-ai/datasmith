@@ -5,6 +5,7 @@ Drop-in replacement for :class:`CheckpointManager` when keeping all
 completed IDs in an in-memory set becomes impractical. Uses SQLite's
 WAL journal mode for high write throughput and supports concurrent reads.
 """
+
 from __future__ import annotations
 
 import asyncio
@@ -72,14 +73,10 @@ class SQLiteCheckpointManager:
 
     def _open_db(self) -> sqlite3.Connection:
         """Open SQLite connection with WAL mode for concurrent access."""
-        conn = sqlite3.connect(
-            str(self._db_path), timeout=30, check_same_thread=False
-        )
+        conn = sqlite3.connect(str(self._db_path), timeout=30, check_same_thread=False)
         conn.execute("PRAGMA journal_mode=WAL")
         conn.execute("PRAGMA synchronous=NORMAL")
-        conn.execute(
-            "CREATE TABLE IF NOT EXISTS completed (id TEXT PRIMARY KEY)"
-        )
+        conn.execute("CREATE TABLE IF NOT EXISTS completed (id TEXT PRIMARY KEY)")
         conn.commit()
         return conn
 
@@ -96,9 +93,7 @@ class SQLiteCheckpointManager:
             if self._conn is None:
                 raise RuntimeError("Checkpoint not loaded; call load() first")
             loop = asyncio.get_running_loop()
-            await loop.run_in_executor(
-                None, self._insert, record_id
-            )
+            await loop.run_in_executor(None, self._insert, record_id)
             self._count += 1
 
     async def commit_batch(self, record_ids: list[str]) -> None:
@@ -111,9 +106,7 @@ class SQLiteCheckpointManager:
             if self._conn is None:
                 raise RuntimeError("Checkpoint not loaded; call load() first")
             loop = asyncio.get_running_loop()
-            inserted = await loop.run_in_executor(
-                None, self._insert_batch, record_ids
-            )
+            inserted = await loop.run_in_executor(None, self._insert_batch, record_ids)
             self._count += inserted
 
     def _insert(self, record_id: str) -> None:
@@ -143,9 +136,7 @@ class SQLiteCheckpointManager:
             if self._conn is None:
                 return False
             loop = asyncio.get_running_loop()
-            return await loop.run_in_executor(
-                None, self._exists, record_id
-            )
+            return await loop.run_in_executor(None, self._exists, record_id)
 
     async def load_done_ids(self) -> set[str]:
         """Load all completed IDs as a set for fast in-memory membership checks."""
@@ -160,9 +151,7 @@ class SQLiteCheckpointManager:
         """Check existence in database (synchronous)."""
         if self._conn is None:
             return False
-        cursor = self._conn.execute(
-            "SELECT 1 FROM completed WHERE id = ?", (record_id,)
-        )
+        cursor = self._conn.execute("SELECT 1 FROM completed WHERE id = ?", (record_id,))
         return cursor.fetchone() is not None
 
     def _fetch_all_ids(self) -> list[str]:

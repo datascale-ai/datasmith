@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import json
 import re
 import time
 from pathlib import Path
@@ -23,7 +22,9 @@ class MTBenchLiteTask:
                     cases.append(BenchmarkCase.model_validate_json(line))
         return cases
 
-    async def run_case(self, case: BenchmarkCase, candidate: object, judge: object | None) -> BenchmarkCaseResult:
+    async def run_case(
+        self, case: BenchmarkCase, candidate: object, judge: object | None
+    ) -> BenchmarkCaseResult:
         started = time.monotonic()
         response = await candidate.generate(case.prompt)
         if judge is None:

@@ -7,7 +7,6 @@ from pathlib import Path
 from typing import Any
 
 import datasmith.assessment.suite  # noqa: F401
-
 from datasmith.assessment.aggregator import build_dataset_summary
 from datasmith.assessment.normalizer import normalize_row
 from datasmith.assessment.reporter import write_assessment_report
@@ -70,7 +69,9 @@ class AssessmentRunner:
                 rows.append((line_number, json.loads(line)))
         return rows
 
-    def _sample_rows(self, rows: list[tuple[int, dict[str, Any]]]) -> list[tuple[int, dict[str, Any]]]:
+    def _sample_rows(
+        self, rows: list[tuple[int, dict[str, Any]]]
+    ) -> list[tuple[int, dict[str, Any]]]:
         sample_size = min(self.config.suite.sample_size, len(rows))
         if sample_size >= len(rows):
             return rows

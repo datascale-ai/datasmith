@@ -31,6 +31,7 @@ Usage::
     )
     # result["records_per_minute"] -> float
 """
+
 from __future__ import annotations
 
 import logging
@@ -52,6 +53,7 @@ def _clear_metrics(pipeline: Any) -> None:
     """Remove stale MetricsCollector so a fresh one is created on next run."""
     try:
         from datasmith.metrics import MetricsCollector
+
         pipeline.hooks = [h for h in pipeline.hooks if not isinstance(h, MetricsCollector)]
     except ImportError:
         pass
@@ -62,9 +64,7 @@ def _make_actor_class():
     try:
         import ray
     except ImportError as e:
-        raise ImportError(
-            "ray is required. Install with: pip install 'ray[default]'"
-        ) from e
+        raise ImportError("ray is required. Install with: pip install 'ray[default]'") from e
 
     @ray.remote
     class DataSmithActor:
@@ -111,11 +111,14 @@ def _make_actor_class():
             evaluators = []
             if use_evaluator:
                 from datasmith.evaluators.llm_judge import LLMJudge
-                evaluators = [LLMJudge(
-                    llm=client,
-                    threshold=judge_threshold,
-                    eval_max_tokens=5,
-                )]
+
+                evaluators = [
+                    LLMJudge(
+                        llm=client,
+                        threshold=judge_threshold,
+                        eval_max_tokens=5,
+                    )
+                ]
 
             pipeline_kwargs: dict[str, Any] = dict(
                 strategy=strategy,
@@ -136,9 +139,12 @@ def _make_actor_class():
         async def warmup(self) -> str:
             """Send a minimal request to warm up HTTP connection + vLLM KV cache."""
             import openai
+
             try:
                 client = openai.AsyncOpenAI(
-                    base_url=self._base_url, api_key="EMPTY", timeout=30,
+                    base_url=self._base_url,
+                    api_key="EMPTY",
+                    timeout=30,
                 )
                 await client.chat.completions.create(
                     model=self._model,
@@ -226,9 +232,7 @@ class RayOrchestrator:
         try:
             import ray
         except ImportError as e:
-            raise ImportError(
-                "ray is required. Install with: pip install 'ray[default]'"
-            ) from e
+            raise ImportError("ray is required. Install with: pip install 'ray[default]'") from e
 
         from datasmith.distributed.shard import merge_outputs, split_input
 
@@ -236,6 +240,7 @@ class RayOrchestrator:
             # Pass repo paths via runtime_env so Actor worker processes can
             # import datasmith even without a system-wide pip install.
             import os
+
             existing = os.environ.get("PYTHONPATH", "")
             repo_paths = f"{_REPO_ROOT / 'src'}:{_REPO_ROOT}"
             pythonpath = f"{repo_paths}:{existing}" if existing else repo_paths
@@ -253,10 +258,7 @@ class RayOrchestrator:
 
         # Split input
         shard_paths = split_input(input_path, num_actors, str(shard_dir))
-        output_paths = [
-            str(shard_dir / f"output_shard_{i}.jsonl")
-            for i in range(num_actors)
-        ]
+        output_paths = [str(shard_dir / f"output_shard_{i}.jsonl") for i in range(num_actors)]
 
         # Create Actors
         DataSmithActor = _make_actor_class()
@@ -286,7 +288,7 @@ class RayOrchestrator:
         t0 = time.monotonic()
         futures = [
             a.process_shard.remote(sp, op)
-            for a, sp, op in zip(actors, shard_paths, output_paths)
+            for a, sp, op in zip(actors, shard_paths, output_paths, strict=False)
         ]
         shard_results: list[dict[str, Any]] = ray.get(futures)
         elapsed = time.monotonic() - t0

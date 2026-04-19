@@ -8,8 +8,10 @@ Output files are named output_shard_{i}.jsonl so that the existing
 merge_outputs() from distributed/shard.py (glob: *_shard_*.jsonl) works
 without modification.
 """
+
 from __future__ import annotations
 
+import contextlib
 import json
 import logging
 import multiprocessing
@@ -23,8 +25,8 @@ from datasmith.distributed.shard import merge_outputs, split_input
 
 logger = logging.getLogger(__name__)
 
-_JOB_TIMEOUT = 600.0    # seconds to wait for a job before declaring failure
-_ALIVE_POLL = 0.5       # seconds between done-file polls
+_JOB_TIMEOUT = 600.0  # seconds to wait for a job before declaring failure
+_ALIVE_POLL = 0.5  # seconds between done-file polls
 
 
 def _write_job_atomic(job_file: Path, job_data: dict[str, Any]) -> None:
@@ -87,9 +89,7 @@ class PoolOrchestrator:
         """
         deadline = time.monotonic() + timeout
         while time.monotonic() < deadline:
-            all_ready = all(
-                (inbox / _READY_FILE).exists() for inbox in self._inbox_dirs
-            )
+            all_ready = all((inbox / _READY_FILE).exists() for inbox in self._inbox_dirs)
             if all_ready:
                 logger.info("All %d workers ready", self.num_workers)
                 return
@@ -98,17 +98,17 @@ class PoolOrchestrator:
         ready_count = sum(1 for inbox in self._inbox_dirs if (inbox / _READY_FILE).exists())
         logger.warning(
             "Readiness timeout after %.1fs: %d/%d workers ready — proceeding anyway",
-            timeout, ready_count, self.num_workers,
+            timeout,
+            ready_count,
+            self.num_workers,
         )
 
     def _stop_workers(self) -> None:
         """Send shutdown sentinel to all workers, then join or terminate."""
         for i, inbox in enumerate(self._inbox_dirs):
             sentinel_file = inbox / f"shutdown_{i}.job"
-            try:
+            with contextlib.suppress(OSError):
                 _write_job_atomic(sentinel_file, {"cmd": _SHUTDOWN_SENTINEL})
-            except OSError:
-                pass
         # Give workers 5s to exit gracefully, then terminate
         deadline = time.monotonic() + 5.0
         for p in self._processes:

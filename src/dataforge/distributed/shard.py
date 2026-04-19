@@ -1,5 +1,6 @@
 # src/datasmith/distributed/shard.py
 """File-based sharding for horizontal scaling."""
+
 from __future__ import annotations
 
 import asyncio
@@ -32,6 +33,7 @@ def split_input(
         lines = _read_jsonl_lines(input_path)
     else:
         from datasmith.io import read_records
+
         raw_records = read_records(input_path, format)
         lines = [json.dumps(r, ensure_ascii=False) for r in raw_records]
 
@@ -171,11 +173,13 @@ def shard_status(shard_dir: str) -> list[dict[str, Any]]:
                 for line in f:
                     if line.strip():
                         count += 1
-        statuses.append({
-            "shard_id": int(shard_id_str),
-            "checkpoint_dir": str(ckpt_dir),
-            "completed_count": count,
-        })
+        statuses.append(
+            {
+                "shard_id": int(shard_id_str),
+                "checkpoint_dir": str(ckpt_dir),
+                "completed_count": count,
+            }
+        )
 
     return statuses
 

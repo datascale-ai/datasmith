@@ -3,6 +3,8 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any, Protocol
 
+from pydantic import BaseModel, Field
+
 from datasmith.assessment.schema import RecordAssessment
 from datasmith.assessment.utils import (
     count_duplicates,
@@ -18,7 +20,6 @@ from datasmith.evaluators.multi_criteria import MultiCriteriaEvaluator
 from datasmith.evaluators.regex_filter import RegexFilter
 from datasmith.evaluators.similarity import SimilarityEvaluator
 from datasmith.registry import register_assessment_suite
-from pydantic import BaseModel, Field
 
 
 class AssessmentSuiteSpec(BaseModel):

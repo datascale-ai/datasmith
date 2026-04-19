@@ -2,8 +2,9 @@ from __future__ import annotations
 
 from typing import Literal
 
-from datasmith.config.schema import LLMConfig
 from pydantic import BaseModel, Field
+
+from datasmith.config.schema import LLMConfig
 
 
 class BenchmarkTaskConfig(BaseModel):
